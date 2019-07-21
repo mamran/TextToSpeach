@@ -1,0 +1,248 @@
+﻿<html>
+	<head>
+		<LINK title="8-bit Color Style" media="all" href="democratia.css" type="text/css" rel="StyleSheet">
+			<META HTTP-EQUIV="Content-Type" content="text/html; charset=UTF-8">    </head>
+	<script language="JavaScript" id="MGscript" SRC="/MagicScripts/MGBC033_00_000CS.js"></script>    
+	<script language="JavaScript" src="PlayProtocol.js"></script>
+	<body dir=rtl      onLoad='MGEventProcessing(event)' onUnLoad='MGEventProcessing(event)' onKeyDown='return MGEventProcessing(event)' onSelectStart='return MGEventProcessing(event)'>
+		<table width="100%" dir="rtl" cellspacing="0"  cellpadding="0"  >
+			<tr>
+					<td class="MainRight" valign=middle width="73%">&nbsp;<a name="lblKotertMasach" tsk="26" number="1" dir="rtl" maxlength="90" >מסך קליטת תוצאות מפרוטוקול קלפי מעטפות חיצוניות    0-001.0      מקור נתונים מקומי</a></td>
+					<td class="MainLeft" align="left" height="24" colspan="2" width="27%">&nbsp;&nbsp; 		S60.13&nbsp; 
+				<a href="help/S60_13.pdf" target=_new> 
+					<IMG  img src=images/HelpIcon.png border=0  align=absbottom height=24 width=24 alt="עזרה"></a>					
+					<INPUT class="MENU" id="CLOSE" type="button" name="btnClose" tsk="26" number="0">&nbsp;&nbsp; &nbsp;	</td>
+			</tr>
+		</table>
+		<br><br>
+		<table border=0 rules="none"  >
+			<tr >
+				<td  valign="top"  >
+					<TABLE  id="pizulTbl" style="border-style: solid; border-width: 1px; "  cellpadding="10">
+						<tr class="head"  ><td colspan="2" height="26">תוצאות הצבעה בקלפי לבחירות לכנסת</TD></tr>											
+						<tr><TH ><a name="lblKotert1" tsk="26" number="17" dir="rtl" maxlength="40" style="visibility:hidden" >מספר בז"ב לפי רשימות הבוחרים:</a></TH>
+							<TD ><INPUT value="0" id="4P" name="misparBazabTd" tsk="26" number="4" dir="rtl" maxlength="4" style="visibility:hidden" class="txtVeiw"></TD></tr>
+						<tr><TH  >מספר מעטפות בתיבת הקלפי:</TH>
+							<TD><INPUT value="0" id="4P" name="misparMatzbeemTeiva" tsk="26" number="7" dir="rtl" maxlength="4" class="txtEdit"></TD></tr>
+						<tr><TH >סך כל הקולות הפסולים 	(כולל מעטפות ריקות):</TH>
+							<TD ><INPUT value="0" id="4P" name="misparPsulimTd" tsk="26" number="8" dir="rtl" maxlength="4" class="txtEdit"></TD></tr>
+						<tr>						
+							<TH >סך כל הקולות הכשרים:</TH>
+							<TD ><INPUT value="0" id="4P" name="misparKsherimTd" tsk="26" number="9" dir="rtl" maxlength="4" class="txtEdit"></TD></tr>
+
+						<tr class="head"><TD colspan="2"> שדות בקרה</TD></tr>
+						<tr >						
+							<TH > סטטוס הפרוטוקול: </TH>
+							<TD ><a name="lblstatusProtokol" tsk="26" number="12" dir="rtl" maxlength="30">הגיע אך טרם נקלט</a></TD></tr>
+				<tr >						
+						<TH > מועד עדכון אחרון : </TH>
+						<TD ><a name="lblmoedIdkun" tsk="26" number="13" dir="ltr" maxlength="30">11:17 18/07/19</a></TD>
+				</tr>
+				<tr class="head"><TD  colspan=2>משתמש </TD></tr>
+				<tr>
+						<TH > מספר משתמש: </TH>
+						<TD ><a name="lblmisparMishtamesh" tsk="26" number="14" dir="rtl" maxlength="6">999991</a></TD></tr>
+				<tr>
+						<TH > שם משתמש: </TH>
+						<TD ><a name="lblshemMishtamesh" tsk="26" number="15" dir="ltr" maxlength="20">DEV-בצלאל (כנסת דוד</a></TD></tr>
+
+				<tr>
+						<TH height="26" >מזהה פרוטוקול:</TH>
+						<td><a name="lblMezaheProtokol" tsk="26" number="2" dir="rtl" maxlength="6">990017</a></TD></tr>
+				<tr class="head"><TD colspan="2">סיבת עדכון</TD></tr>
+				<tr ><td colspan="2"><SELECT align="right"  	name="cmbSibatIdkun" tsk="26" number="16" dir="rtl" maxlength="0" disabled="true" style="width: 406; height:19"    onChange=MGEventProcessing(event)><OPTION value="0">טעות חשבונית בסיכום מנין הקולות (סעיף 79(ה)(1) לחוק)<OPTION value="1">טעות או השמטה בהעתקת מספר הקולות הכשרים (סעיף 79(ה)(2) לחוק)<OPTION value="2">החלפת רישום קולות כשרים בין רשימות (סטיית שורות) (סעיף 79(ה)(3) לחוק)<OPTION value="3">מספר המעטפות בתיבת הקלפי גבוה ממספר בז&quotב (חריגת מצביעים)<OPTION value="4">קלפי ללא מצביעים (אפס מעטפות בתיבת הקלפי)</SELECT></Td></tr>	
+				<tr >						
+						<TD colspan="2">
+						    <input type="button" name="btnBdika" tsk="26" number="6"  style="width:70; height:31; font-size:12pt; font-weight:700" class="OPEN" value="בדיקה"><font size="3">&nbsp;&nbsp;
+						    <input value="שמירה" type="button" name="btnShmira" tsk="26" number="18"  style="width:70; height:31; font-size:12pt; font-weight:700" class="OPEN" ></font>&nbsp;&nbsp;
+						    <input type="button" name="btnLog" tsk="26" number="19"  style="width:70; height:31; font-size:12pt; font-weight:700" class="OPEN" value="לוג">&nbsp;&nbsp;
+						    <input type="button" name="btnShgiot" tsk="26" number="20"  style="width:70; height:31; font-size:12pt; font-weight:700" class="OPEN" value="שגיאות">&nbsp;&nbsp; 
+						<!-- <input value="הדפסה" type="button" name="btnHadpasa" tsk="26" number="21" disabled="true"  style="width:70	; height:31; font-size:12pt; font-weight:700" class="OPEN" ></TD> -->
+						<input type="button" name="btnPlay"  style="width:70	; height:31; font-size:12pt; font-weight:700" class="OPEN" value="השמעה" onclick="PlayAudio('BaaleTafkidimBAkalpitTbl')"></TD>
+				</tr>
+		</TABLE>															
+		</td>
+		<td width="100px"> </td>
+		<td  valign=top >
+			<TABLE dir=rtl class="TAVLA" id="BaaleTafkidimBAkalpitTbl" tsk="33" number="0" cellpadding=0 cellspacing=0  height="65" style="border-style: solid; border-width: 1px; padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px"  >
+											<tr dir=rtl class="head" height=21>
+													<TD colspan="2" nowrap style="border-right-style: solid; border-right-width: 1px">קולות כשרים לרשימות </TD>
+													<TD colspan="3" nowrap style="border-left-style: solid; border-left-width: 1px;height:26px">	
+														<p align="center"> <img border="0" src="images/mg_vcr.gif" name="MG_VCR" align=left width="175" height="21"></p></TD>
+											</tr>
+											
+											<TR>
+												<TH >	אותיות <br>הרשימה</TH>
+												<TH  > קולות <br>לרשימה</TH>
+												<th width="80px">&nbsp;</th>
+												<TH >אותיות<br> הרשימה</TH>
+												<TH >קולות<br> לרשימה</TH>
+											</TR>
+											<TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_0" dir="rtl" maxlength="5"    tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" data-soundfilename="emet.m4a">אמת</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_0" dir="rtl" maxlength="5"    tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_0" dir="rtl" maxlength="5"    tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >נץ</a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_0" dir="rtl" maxlength="5" style="visibility:visible"    tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_1" dir="rtl" maxlength="5"    tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" data-soundfilename="Gimel.m4a">ג</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_1" dir="rtl" maxlength="5"    tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_1" dir="rtl" maxlength="5"    tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >נר</a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_1" dir="rtl" maxlength="5" style="visibility:visible"    tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_2" dir="rtl" maxlength="5"    tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" >דעם</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_2" dir="rtl" maxlength="5"    tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_2" dir="rtl" maxlength="5"    tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >ן</a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_2" dir="rtl" maxlength="5" style="visibility:visible"    tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_3" dir="rtl" maxlength="5"    tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" >ום</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_3" dir="rtl" maxlength="5"    tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_3" dir="rtl" maxlength="5"    tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >ןך</a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_3" dir="rtl" maxlength="5" style="visibility:visible"    tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_4" dir="rtl" maxlength="5"    tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" >ז</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_4" dir="rtl" maxlength="5"    tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_4" dir="rtl" maxlength="5"    tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >ןנ</a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_4" dir="rtl" maxlength="5" style="visibility:visible"    tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_5" dir="rtl" maxlength="5"    tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" >זי</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_5" dir="rtl" maxlength="5"    tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_5" dir="rtl" maxlength="5"    tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >פה</a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_5" dir="rtl" maxlength="5" style="visibility:visible"    tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_6" dir="rtl" maxlength="5"    tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" >זך</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_6" dir="rtl" maxlength="5"    tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_6" dir="rtl" maxlength="5"    tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >ףז</a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_6" dir="rtl" maxlength="5" style="visibility:visible"    tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_7" dir="rtl" maxlength="5"    tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" >זנ</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_7" dir="rtl" maxlength="5"    tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_7" dir="rtl" maxlength="5"    tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >ףי</a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_7" dir="rtl" maxlength="5" style="visibility:visible"    tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_8" dir="rtl" maxlength="5"    tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" >זץ</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_8" dir="rtl" maxlength="5"    tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_8" dir="rtl" maxlength="5"    tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >ףך</a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_8" dir="rtl" maxlength="5" style="visibility:visible"    tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_9" dir="rtl" maxlength="5"    tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" >טב</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_9" dir="rtl" maxlength="5"    tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_9" dir="rtl" maxlength="5"    tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >ףנ</a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_9" dir="rtl" maxlength="5" style="visibility:visible"    tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_10" dir="rtl" maxlength="5"   tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" >י</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_10" dir="rtl" maxlength="5"   tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_10" dir="rtl" maxlength="5"   tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >ףץ</a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_10" dir="rtl" maxlength="5" style="visibility:visible"   tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_11" dir="rtl" maxlength="5"   tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" >יז</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_11" dir="rtl" maxlength="5"   tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_11" dir="rtl" maxlength="5"   tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >צק</a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_11" dir="rtl" maxlength="5" style="visibility:visible"   tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_12" dir="rtl" maxlength="5"   tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" >ין</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_12" dir="rtl" maxlength="5"   tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_12" dir="rtl" maxlength="5"   tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >ץ</a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_12" dir="rtl" maxlength="5" style="visibility:visible"   tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_13" dir="rtl" maxlength="5"   tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" >יץ</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_13" dir="rtl" maxlength="5"   tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_13" dir="rtl" maxlength="5"   tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >ץז</a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_13" dir="rtl" maxlength="5" style="visibility:visible"   tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_14" dir="rtl" maxlength="5"   tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" >כ</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_14" dir="rtl" maxlength="5"   tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_14" dir="rtl" maxlength="5"   tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >ץי</a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_14" dir="rtl" maxlength="5" style="visibility:visible"   tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_15" dir="rtl" maxlength="5"   tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" >ךק</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_15" dir="rtl" maxlength="5"   tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_15" dir="rtl" maxlength="5"   tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >ק</a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_15" dir="rtl" maxlength="5" style="visibility:visible"   tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_16" dir="rtl" maxlength="5"   tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" >ל</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_16" dir="rtl" maxlength="5"   tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_16" dir="rtl" maxlength="5"   tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >קי</a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_16" dir="rtl" maxlength="5" style="visibility:visible"   tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_17" dir="rtl" maxlength="5"   tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" >מחל</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_17" dir="rtl" maxlength="5"   tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_17" dir="rtl" maxlength="5"   tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >קן</a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_17" dir="rtl" maxlength="5" style="visibility:visible"   tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_18" dir="rtl" maxlength="5"   tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" >מרצ</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_18" dir="rtl" maxlength="5"   tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_18" dir="rtl" maxlength="5"   tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >קף</a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_18" dir="rtl" maxlength="5" style="visibility:visible"   tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_19" dir="rtl" maxlength="5"   tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" >נ</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_19" dir="rtl" maxlength="5"   tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_19" dir="rtl" maxlength="5"   tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >ר</a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_19" dir="rtl" maxlength="5" style="visibility:visible"   tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_20" dir="rtl" maxlength="5"   tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" >נז</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_20" dir="rtl" maxlength="5"   tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_20" dir="rtl" maxlength="5"   tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >שס</a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_20" dir="rtl" maxlength="5" style="visibility:visible"   tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_21" dir="rtl" maxlength="5"   tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" >נך</a></td>
+												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_21" dir="rtl" maxlength="5"   tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_21" dir="rtl" maxlength="5"   tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" ></a></TD>								
+												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_21" dir="rtl" maxlength="5" style="visibility:hidden"   tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR style="visibility:hidden"  height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_22" dir="rtl"   tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" ></a></td>
+												<TD nowrap  ><INPUT id="4P" name="kolotreshima_22" dir="rtl"   tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_22" dir="rtl"   tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" ></a></TD>								
+												<TD nowrap ><INPUT id="4P0" name="kolotreshima2_22" dir="rtl"   tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR><TR style="visibility:hidden"  height=25>
+												<td nowrap  ><a name="lblOtiyotReshima_23" dir="rtl"   tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" ></a></td>
+												<TD nowrap  ><INPUT id="4P" name="kolotreshima_23" dir="rtl"   tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lblOtiyotReshima2_23" dir="rtl"   tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" ></a></TD>								
+												<TD nowrap ><INPUT id="4P0" name="kolotreshima2_23" dir="rtl"   tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR>
+											<div id=mg_BaaleTafkidimBAkalpitTbl_BORDERS style ="position: relative"> <div id=mg_BaaleTafkidimBAkalpitTbl_top style="position:absolute;top:0;left:0;width:0;height:0;font-size:0px;z-index:5000;border-top:black groove 2px"></div> <div id=mg_BaaleTafkidimBAkalpitTbl_bottom style="position:absolute;top:0;left:0;width:0;height:0;font-size:0px;z-index:5000;border-bottom:black groove 2px"></div><div id=mg_BaaleTafkidimBAkalpitTbl_left style="position:absolute;top:0;left:0;width:0;height:0;font-size:0px;z-index:5000;border-left:black groove 2px"></div> <div id=mg_BaaleTafkidimBAkalpitTbl_right style="position:absolute;top:0;left:0;width:0;height:0;font-size:0px;z-index:5000;border-right:black groove 2px"></div> </div></TABLE>
+										<TABLE dir=rtl class="TAVLA" id="BaaleTafkidimBAkalpitTbl" cellpadding=0 cellspacing=0 width="100%" height="65" style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px"  >
+
+											<tr class="head"><TD colspan=2 >סך הכל (לבקרה)</TD></tr>
+											<tr height=6><TD colspan="2" ></TD></tr>
+											<tr height=24>													
+														<TH style="padding-right:10px;width:180px">סה"כ קולות כשרים בפרוטוקול:</TH>
+														<TD ><INPUT value="0" id="4P" name="misparKsherimProtokolTd" tsk="26" number="5" dir="rtl" maxlength="4" class="txtEdit"></TD>
+												</tr>
+												<tr height=24>						
+														<TH style="padding-right:10px ">סה"כ קולות כשרים לרשימות: </TH>
+														<TD ><a   name="lblKolotKsherim" tsk="26" number="10" dir="rtl" maxlength="4">0</a></TD>
+												</tr>
+												<tr height=24>						
+														<TH style="padding-right:10px">הפרש:</TH>
+														<TD ><a name="lblHefresh" tsk="26" number="11" dir="rtl" maxlength="4" style="color: #FF0000; font-weight: bold" >0</a></TD>
+												</tr>
+												<tr><TD colspan="2" >&nbsp;</TD></tr>
+									</TABLE>
+		</td></tr></table>									
+			
+	
+</html>

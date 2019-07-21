@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<LINK title="8-bit Color Style" media="all" href="democratia.css" type="text/css" rel="StyleSheet">
+			<meta http-equiv="Content-Type" content="text/html; charset=windows-1255">
+
+	</head>
+	<body dir=rtl>
+			
+			<script src="PlayProtocol.js"></script>
+			<button onclick="PlayAudio()">PlayAudio</button>
+		<table width="100%" dir="rtl" cellspacing="0"  cellpadding="0"  >
+			<tr>
+					<td class="MainRight" valign=middle width="73%">&nbsp;<a name="lblKotertMasach" ></a></td>
+					<td class="MainLeft" align="left" height="24" colspan="2" width="27%">&nbsp;&nbsp; 		S60.13&nbsp; 
+				<a href="help/S60_13.pdf" target=_new> 
+					<IMG  img src=images/HelpIcon.png border=0  align=absbottom height=24 width=24 alt="עזרה"></a>					
+					<INPUT class="MENU" id="CLOSE" type="button" name="btnClose">&nbsp;&nbsp; &nbsp;	</td>
+			</tr>
+		</table>
+		<br><br>
+		<table border=0 rules="none"  >
+			<tr >
+				<td  valign="top"  >
+					<TABLE  id="pizulTbl" style="border-style: solid; border-width: 1px; "  cellpadding="10">
+						<tr class="head"  ><td colspan="2" height="26">תוצאות הצבעה בקלפי לבחירות לכנסת</TD></tr>											
+						<tr><TH ><a name="lblKotert1" >	</a></TH>
+							<TD ><INPUT id="4P" name="misparBazabTd" class="txtVeiw"></TD></tr>
+						<tr><TH  >מספר מעטפות בתיבת הקלפי:</TH>
+							<TD><INPUT id="4P" name="misparMatzbeemTeiva" class="txtEdit"></TD></tr>
+						<tr><TH >סך כל הקולות הפסולים 	(כולל מעטפות ריקות):</TH>
+							<TD ><INPUT id="4P" name="misparPsulimTd" class="txtEdit"></TD></tr>
+						<tr>						
+							<TH >סך כל הקולות הכשרים:</TH>
+							<TD ><INPUT id="4P" name="misparKsherimTd" class="txtEdit"></TD></tr>
+
+						<tr class="head"><TD colspan="2"> שדות בקרה</TD></tr>
+						<tr >						
+							<TH > סטטוס הפרוטוקול: </TH>
+							<TD ><a name="lblstatusProtokol"></a></TD></tr>
+				<tr >						
+						<TH > מועד עדכון אחרון : </TH>
+						<TD ><a name="lblmoedIdkun"></a></TD>
+				</tr>
+				<tr class="head"><TD  colspan=2>משתמש </TD></tr>
+				<tr>
+						<TH > מספר משתמש: </TH>
+						<TD ><a name="lblmisparMishtamesh"></a></TD></tr>
+				<tr>
+						<TH > שם משתמש: </TH>
+						<TD ><a name="lblshemMishtamesh"></a></TD></tr>
+
+				<tr>
+						<TH height="26" >מזהה פרוטוקול:</TH>
+						<td><a name="lblMezaheProtokol"></a></TD></tr>
+				<tr class="head"><TD colspan="2">סיבת עדכון</TD></tr>
+				<tr ><td colspan="2"><SELECT align="right"  	name="cmbSibatIdkun" style="width: 406; height:19"   ></SELECT></Td></tr>	
+				<tr >						
+						<TD colspan="2">
+						    <input type="button" name="btnBdika"  style="width:70; height:31; font-size:12pt; font-weight:700" class="OPEN" value="בדיקה"><font size="3">&nbsp;&nbsp;
+						    <input type="button" name="btnShmira"  style="width:70; height:31; font-size:12pt; font-weight:700" class="OPEN" value="שמירה"></font>&nbsp;&nbsp;
+						    <input type="button" name="btnLog"  style="width:70; height:31; font-size:12pt; font-weight:700" class="OPEN" value="לוג">&nbsp;&nbsp;
+						    <input type="button" name="btnShgiot"  style="width:70; height:31; font-size:12pt; font-weight:700" class="OPEN" value="שגיאות">&nbsp;&nbsp; 
+						<input type="button" name="btnPlay"  style="width:70	; height:31; font-size:12pt; font-weight:700" class="OPEN" value="השמעה" onclick="PlayAudio()"></TD>
+						
+				</tr>
+		</TABLE>															
+		</td>
+		<td width="100px"> </td>
+		<td  valign=top >
+			<TABLE dir=rtl class="TAVLA" id="BaaleTafkidimBAkalpitTbl" cellpadding=0 cellspacing=0  height="65" style="border-style: solid; border-width: 1px; padding-left: 10px; padding-right: 10px; padding-top: 1px; padding-bottom: 1px"  >
+											<tr dir=rtl class="head" height=21>
+													<TD colspan="2" nowrap style="border-right-style: solid; border-right-width: 1px">קולות כשרים לרשימות </TD>
+													<TD colspan="3" nowrap style="border-left-style: solid; border-left-width: 1px;height:26px">	
+														<p align="center"> <img border="0" src="images/mg_vcr.gif" name="MG_VCR" align=left width="175" height="21"></p></TD>
+											</tr>
+											
+											<TR>
+												<TH >	אותיות <br>הרשימה</TH>
+												<TH  > קולות <br>לרשימה</TH>
+												<th width="80px">&nbsp;</th>
+												<TH >אותיות<br> הרשימה</TH>
+												<TH >קולות<br> לרשימה</TH>
+											</TR>
+											<TR height=25>
+												<td nowrap  ><a name="lblOtiyotReshima" style="color: #0000FF; font-size: 11pt; font-weight: bold" >		</a></td>
+												<TD nowrap  ><INPUT id="4P" name="kolotreshima" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+												<th>&nbsp;</th>
+												<TD nowrap ><a name="lbltiyotReshima2" style="color: #0000FF; font-size: 11pt; font-weight: bold" ></a></TD>								
+												<TD nowrap ><INPUT id="4P0" name="kolotreshima2" class="txtEdit" style="height: 20; width:36; " size="5"></TD>								
+											</TR>
+											</TABLE>
+										<TABLE dir=rtl class="TAVLA" id="BaaleTafkidimBAkalpitTbl" cellpadding=0 cellspacing=0 width="100%" height="65" style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px"  >
+
+											<tr class="head"><TD colspan=2 >סך הכל (לבקרה)</TD></tr>
+											<tr height=6><TD colspan="2" ></TD></tr>
+											<tr height=24>													
+														<TH style="padding-right:10px;width:180px">סה"כ קולות כשרים בפרוטוקול:</TH>
+														<TD ><INPUT id="4P" name="misparKsherimProtokolTd" class="txtEdit"></TD>
+												</tr>
+												<tr height=24>						
+														<TH style="padding-right:10px ">סה"כ קולות כשרים לרשימות: </TH>
+														<TD ><a   name="lblKolotKsherim"></a></TD>
+												</tr>
+												<tr height=24>						
+														<TH style="padding-right:10px">הפרש:</TH>
+														<TD ><a name="lblHefresh" style="color: #FF0000; font-weight: bold" >	</a></TD>
+												</tr>
+												<tr><TD colspan="2" >&nbsp;</TD></tr>
+									</TABLE>
+		</td></tr></table>									
+		
+	</body>
+</html>

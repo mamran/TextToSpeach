@@ -1,0 +1,1356 @@
+input.DATE{
+    width:77px;
+    text-align:center;
+}
+input.TZ{
+    width:77px;
+    text-align:center;
+}
+input.Phone{
+    width:90px;
+    text-align:center;
+}
+input.Email{
+    width:200px;
+    text-align:left;
+    direction:ltr;
+}
+
+.ScreenName
+{
+	border:0px; 
+	background-color: transparent;
+	color:white;
+	font-size: 16px;
+	font-weight: bold;				
+}
+a.Delete{
+				text-decoration:underline;
+				color:blue;
+}
+a.Link{
+				cursor:pointer;text-decoration:underline;color:blue;direction:rtl
+}
+input.button{
+				background-color: #99ccff;
+				color:white;
+				font-size:medium;
+				width:100px;
+}
+.Mess
+{
+	font-size:xx-large;
+	color:gray;
+	border:0px; 
+	height: 60px;
+	background-color: transparent;
+}
+.Mess-Small
+{
+	font-size:large;
+	color:gray;
+	border:0px; 
+
+	background-color: transparent;
+}
+
+legend
+{
+	margin:10px 10px 10px 10px;
+	color:blue;
+	font-size:large;
+}
+fieldset
+{
+				padding:0px 10px 10px 10px;margin:0px 5px 5px 5px;
+}
+font.fntFiled
+{
+	color: navy;
+	font-family: Arial;
+	border-right-style: none;
+	border-left-style: none;
+	border-bottom-style: none;
+}
+
+.fif         { visibility: hidden; vertical-align: baseline; text-align: justify }
+a
+{
+	font-size: 12pt;
+	cursor: hand;
+	color: #000000;
+	font-family: Arial;
+}
+body
+{
+	margin: 0px 0px 0px 0px;
+/*	הפקודה גורמת לתצוגה משובשת של סימון שורה בטבלה
+	direction: rtl;  */
+	font-family: Arial;
+	/*color:#808080; */
+}
+
+input        { font-family: Arial; color:#000000; direction: rtl; vertical-align:bottom;
+    width: 90px;
+}
+
+a
+{direction:rtl}
+INPUT.OPEN
+{
+	background-color:#80b3e6;	
+	color:darkblue; height:21;
+	cursor: hand;
+	
+}
+
+INPUT.bigSbm
+{
+	width: 75px;
+	border-top-style: none;
+	background-repeat: no-repeat;
+	border-right-style: none;
+	border-left-style: none;
+	height: 75px;
+	background-color: transparent;
+	border-bottom-style: none;
+	value: "";
+	cursor: hand;
+}
+
+INPUT.BIG
+{
+	width: 50px;
+	border-top-style: none;
+	background-repeat: no-repeat;
+	border-right-style: none;
+	border-left-style: none;
+	height: 50px;
+	background-color: transparent;
+	border-bottom-style: none;
+	value: "";
+	cursor: hand;
+}
+
+INPUT.sbm
+{
+	width: 21px;
+	border-top-style: none;
+	background-repeat: no-repeat;
+	border-right-style: none;
+	border-left-style: none;
+	height: 21px;
+	background-color: transparent;
+	border-bottom-style: none;
+	value: "";
+	cursor: hand;
+}
+
+
+
+INPUT.ckb
+{
+	width: 21px;
+	height: 21px;
+}
+
+INPUT.cmbxEnbl
+{
+
+ 	background-color:#D4D4D4;
+	
+}
+
+SELECT#ckbEnbl
+{
+	border:1px solid #808080; 
+	height: 21px; background-color:#D4D4D4;
+	
+}
+input#ScreenName
+{
+	border:0px; 
+	background-color: transparent;
+	color:white;
+	font-size: 16px;
+	font-weight: bold;
+	width:100%;
+				
+}
+input#ScreenCode
+{
+	border:1px; 
+	background-color: transparent;
+	color:white;
+	font-size: 16px;
+	font-weight: bold;
+	text-align:left;
+	width:70px;				
+}
+
+INPUT#LockIcon
+{
+	background-image: url(images/Lock.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#LockMisra
+{
+	background-image: url(images/SgiratMisra.JPG);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#MisrotIcon
+{
+	background-image: url(images/tafkidimKodmimIcon2.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#PhotoIcon
+{
+	background-image: url(images/Photo.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#envXIcon
+{
+	background-image: url(images/envX.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#envYIcon
+{
+	background-image: url(images/envY.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#autoCalcIcon
+{
+	background-image: url(images/autoCalcIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#handCalcIcon
+{
+	background-image: url(images/handCalcIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#bigSearchIcon
+{
+	background-image: url(images/bigSearchIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#ilutzimIcon
+{
+	background-image: url(images/ilutzimIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#WordIcon
+{
+	background-image: url(images/WordIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#cubiaIcon
+{
+	background-image: url(images/cubiaIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#openCloseIcon
+{
+	background-image: url(images/openCloseIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+INPUT#shibutzLemadrihIcon
+{
+	background-image: url(images/shibutzLemadrihIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#ShihpulMaslulimIcon
+{
+	background-image: url(images/ShihpulMaslulim.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#ScanIcon
+{
+	background-image: url(images/Attach.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#NesiotIcon
+{
+	background-image: url(images/ShihpulMaslulim.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#bigNeheIcon
+{
+	background-image: url(images/bigNeheIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#NeheIcon
+{
+	background-image: url(images/NeheIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#kalpiIcon
+{
+	background-image: url(images/kalpiIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#envelIcon
+{
+	background-image: url(images/envelIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#tafkidDargaIcon
+{
+	background-image: url(images/tafkidDargaIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#haadafotIcon
+{
+	background-image: url(images/haadafotIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#rikuzMashovIcon
+{
+	background-image: url(images/rikuzMashovIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+
+INPUT#diplomaIcon
+{
+	background-image: url(images/diplomaIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#VdiplomaIcon
+{
+	background-image: url(images/VdiplomaIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+
+INPUT#remIcon
+{
+	background-image: url(images/remIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#tafkidimKodmimIcon
+{
+	background-image: url(images/tafkidimKodmimIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#ishurNemahelIcon
+{
+	background-image: url(images/ishurNemahelIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#bitulIshurNemahelIcon
+{
+	background-image: url(images/bitulIshurNemahelIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#haavaraVeshubitz
+{
+	background-image: url('images/haavaraVeshubitz.jpg');
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+
+INPUT#shibutzIcon
+{
+	background-image: url(images/shibutzIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#peoplesIcon
+{
+	background-image: url(images/peoples.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#frozeIcon
+{
+	background-image: url(images/frozeIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#zoomIcon
+{
+	background-image: url(images/zoom.jpg);
+		background-repeat:no-repeat;
+	background-color:transparent;
+
+}
+
+INPUT#tnuaCaspitIcon
+{
+	background-image: url(images/tnuaCaspitIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+
+}
+
+
+INPUT#tikunPirteiBankIcon
+{
+	background-image: url(images/tikunPirteiBankIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+	
+}
+
+
+INPUT#ishurMeshalemIcon
+{
+	background-image: url(images/ishurMeshalemIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#ishurGoremIcon
+{
+	background-image: url(images/ishurGoremIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#switchIcon
+{
+	background-image: url(images/switchIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#gradeIcon
+{
+	background-image: url(images/gradeIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#ckbIcon
+{
+	background-image: url(images/ckbIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#editForm
+{
+	background-image: url(images/EditForm.png);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#BarcodeIcon
+{
+	background-image: url(images/barcode.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#Migun
+{
+	background-image: url(images/Migun.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#openList
+{
+	background-image: url(images/ListIcon.PNG);	
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#join
+{
+	background-image: url(images/cropicon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#manaIcon
+{
+	background-image: url(images/manaIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#plusIcon
+{
+	background-image: url(images/plusIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#calcIcon
+{
+	background-image: url(images/calcIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#diskIcon
+{
+	background-image: url(images/diskIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#Shibizim_New
+{
+	background-image: url(images/Shibizim_New.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#ExcelIcon
+{
+	width:24px;
+	height:23px;
+	background-image: url(images/ExcelIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#upnarrow
+{
+	background-image: url(images/up.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+INPUT#downnarrow
+{
+	background-image: url(images/down.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+INPUT#yeadim
+{
+	background-image: url(images/yeadim.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+INPUT#kalpiotresev
+{
+	background-image: url(images/kalpiotresev.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#CLOSE
+{
+	background-image: url(images/closeIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#gushIcon
+{
+	background-image: url(images/gushIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#yeshuvIcon
+{
+	background-image: url(images/yeshuvIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+INPUT#rovaIcon
+{
+	background-image: url(images/rovaIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+INPUT#rikuzIcon
+{
+	background-image: url(images/rikuzIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#LogIcon
+{
+	background-image: url(images/EditForm.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#HOME
+{
+	background-image: url(images/HomeIcon.png);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#HELP
+{
+	background-image: url(images/HelpIcon.png);	
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#OK
+{
+	background-image: url(images/OKIcon.png);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#I
+{
+	background-image: url(images/IIcon.png);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#PRINT
+{
+	background-image: url(images/PrintIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#UNDO
+{
+	background-image: url(images/UndoIcon.png);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#SEARCH
+{
+	background-image: url(images/searchIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#DEL
+{
+	background-image: url(images/X.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+INPUT#delSmall
+{
+	background-image: url(images/xSmall.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#SmsIcon
+{
+	background-image: url(images/SmsIcon.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+INPUT#mashov
+{
+	background-image: url(images/mahsov.jpg);
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+
+
+
+INPUT#2P
+{
+	width: 21px;
+}
+
+INPUT#23P
+{
+	width: 26px;
+}
+
+
+INPUT#3P
+{
+	width: 30px;
+}
+
+INPUT#4P
+{
+	width: 36px;
+}
+
+INPUT#5P
+{
+	width: 40px;
+}
+
+INPUT#6P
+{
+	width: 45px;
+}
+
+INPUT#9P
+{
+	width: 72px;
+}
+
+INPUT.MENU
+{
+	width: 24px;
+	height: 24px;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	border-bottom-style: none;	
+}
+
+
+iframe.ifrmME
+{
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	border-bottom-style: none;
+}
+
+td.mainRight
+{
+	border-right: 0px;
+	padding-right: 10px;
+	border-top: 0px;
+	padding-left: 0px;
+	font-weight: bold;
+	padding-bottom: 0px;
+	margin: 0px;
+	border-left: 0px;
+	color: white;
+	padding-top: 0px;
+	border-bottom: thin white solid;
+	background-color: #3399ff;
+	text-align: right;
+}
+	
+td.mainLeft
+{
+	border-right: 0px;
+	border-top: 0px;
+	border-left: 0px;
+	border-bottom: thin white solid;
+	padding:0px 0px 0px 10px;
+	margin: 0px;
+	color: white;
+	background-color: #3399ff;
+	text-align: left;
+/*	width:300px;*/
+}
+
+TD.headRight
+{
+	 text-align:right;
+	 background-color:#003399;	 
+	 color:Aqua;
+}
+TD.headleft
+{
+	 text-align:right;
+	 background-color:#003399;
+	 color:Aqua;	
+}
+
+tr.head
+{
+	font-weight: bold;
+	font-size: 12pt;
+	color: white;
+	background-color: #99ccff;
+	height: 21px;
+	margin-right:100px;
+}
+tr.head td {
+	padding-right:10px;			
+}
+tr.headReport
+{
+	color:black;
+	font-weight: bold;
+	font-size: 10pt;
+	background-color: #99ccff;
+	height: 21px;
+}
+
+tr.headReport td
+{
+	padding-right:10px;
+}
+
+table
+{
+	direction:rtl;
+}
+
+TH
+{
+	 text-align:right;
+}
+
+TH#3P
+{
+	width: 30px;
+}
+
+TH#9P
+{
+	width: 72px;
+}
+
+
+
+INPUT#11P
+{
+	width: 86px;
+}
+
+
+
+TH#11P
+{
+	width: 86px;
+}
+INPUT#13P
+{
+	width: 104x;
+}
+
+TH#11P
+{
+	width: 104x;
+}
+
+INPUT#15P
+{
+	width: 120px;
+}
+
+INPUT#17P
+{
+	width: 130px;
+}
+
+
+INPUT#20P
+{
+	width: 150px;
+}
+
+INPUT#25P
+{
+	width: 186px;
+}
+
+INPUT#28P
+{
+	width: 220px;
+}
+
+INPUT#30P
+{
+	width: 242px;
+}
+
+INPUT#35P
+{
+	width: 280px;
+}
+
+INPUT#40P
+{
+	width: 320px;
+}
+
+TH#20P
+{
+	width: 150px;
+}
+
+TH#25P
+{
+	width: 186px;
+}
+
+TH#028P
+{
+	width: 220px;
+}
+
+TH#30P
+{
+	width: 242px;
+}
+
+TH#35P
+{
+	width: 280px;
+}
+
+TH#40P
+{
+	width: 320px;
+}
+
+INPUT#70P
+{
+	width: 430px;
+}
+
+INPUT#75P
+{
+	width: 500px;
+}
+
+INPUT#80P
+{
+	width: 700px;
+}
+
+INPUT#100P
+{
+	width: 755px;
+}
+
+INPUT.txtFileName
+{
+	text-align: left; direction: ltr;width:400px}
+
+INPUT.txtEdit
+{
+	font-family: Arial; font-size: 10pt;border:thin inset #C0C0C0; height: 21px; color:#000000;}
+
+INPUT.txtEditLarge
+{
+	font-size: larger;}
+
+INPUT.txt2p
+{
+	border-right: silver thin inset;
+	border-top: silver thin inset;
+	border-left: silver thin inset;
+	border-bottom: silver thin inset;
+	height: 21px;
+	width:26PX;
+}
+
+
+INPUT.txtVeiwColor
+{
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	height: 21px;
+	background-color: #d5ebff;
+	border-bottom-style: none;
+}
+
+INPUT.txtVeiw
+{
+	border:0px; 
+	height: 21px;
+	background-color: transparent;
+	font-size: 16px;
+}
+INPUT.txtVeiwLarge
+{
+	border:0px; 
+	 background-color: transparent;
+	 font-size: larger;
+	 font-weight: bold; 
+}
+
+INPUT.txtVeiw1
+{
+	border:0px; 
+	height: 21px;
+	 background-color: transparent;
+	 font-size: 14px;
+	 font-weight: bold; 
+}
+
+input.ReadOnlyBold
+{
+				border:0px;
+				background-color:transparent;
+				font-weight:bold;
+}
+
+
+INPUT.tables
+{
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	border-bottom-style: none;
+	TEXT: black;
+}
+
+TEXT.koteret
+{
+	font-weight: bold;
+	font-size: 14px;
+	color: navy;
+}
+
+
+DIV.shemSade
+{
+	font-size:14px;
+	clear: none;
+	height: 21px;
+	color: gray;	
+}
+
+.star
+{
+	clear: none;
+	display: inline;
+	font-weight: bold;
+	font-size: 20px;
+	width: 7px;
+	color: #ff0000;
+}
+
+DIV.tbl3rows
+{
+	height: 150px;	
+	width: 100%;
+}
+
+DIV.bg250
+{
+	border-style:none; 
+	font-weight: bold;
+	font-size: 14px;
+	width: 250px;
+	color: white;
+	height: 21px;
+	background-color: transparent;
+	
+}
+
+DIV.bg195
+{
+	font-weight: bold;
+	font-size: 13px;
+	width: 195px;
+	color: white;
+	border-top-style: none;
+	background-repeat: no-repeat;
+	border-right-style: none;
+	border-left-style: none;
+	height: 21px;
+	background-color: #99ccff;
+	border-bottom-style: none;
+}
+
+DIV.katan
+{
+	border-style:none;
+	font-weight: bold;
+	font-size: 14px;
+	width: 395px;
+	color: white;
+	height: 21px;
+	background-color: #99ccff;
+	
+}
+DIV.gadol
+{
+	font-weight: bold;
+	font-size: 14px;
+	width: 800px;
+	color: white;
+	border-top-style: none;
+	background-repeat: no-repeat;
+	border-right-style: none;
+	border-left-style: none;
+	height: 21px;
+	background-color: #99ccff;
+	border-bottom-style: none;
+}
+
+DIV.gadolMain
+{
+	font-size: 13px;
+	vertical-align: super;
+	width: 800px;
+	color: white;
+	direction: ltr;
+	border-top-style: none;
+	background-repeat: no-repeat;
+	border-right-style: none;
+	border-left-style: none;
+	height: 24px;
+	background-color: #3399ff;
+	border-bottom-style: none;
+}
+
+DIV.HEADER
+{
+	font-weight: 700;
+	font-size: 16px;
+	float: right;
+	width: 200px;
+	direction: rtl;
+	margin-right: 5px;
+	position: relative;
+	top: 4px;
+	height: 21px;
+}
+div.HeaderBlue
+{
+	font-weight: bold;
+	font-size: 12pt;
+	color: white;
+	background-color: #99ccff;
+	height: 21px;
+	padding-right:10px;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+
+DIV.tables
+{
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	text-align: right;
+	border-bottom-style: none;
+}
+
+TABLE.TAVLA
+{
+	border-right: 0px;
+	padding-right: 2px;
+	border-top: 0px;
+	border-left: 0px;
+	border-bottom: 0px;	
+	text-align: right;
+}
+
+TD
+{
+	border-right: 0px;
+	border-top: 0px;
+	border-left: 0px;
+	border-bottom: 0px;
+}
+TH
+{
+	font-size: 13px;	
+	font-weight: bold;
+	padding-bottom: 2px;
+	color: darkblue;
+}
+
+ 
+TR
+{
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	border-bottom-style: none;	
+}
+
+table.Grid
+{
+	border-top:thin darkblue solid;
+	border-right:thin darkblue solid;
+	padding:0px 0px 0px 0px ;
+	margin:0px 0px 0px 0px ;	
+	border:5px #3399ff outset;
+}
+table.Grid td
+{
+	border-left:thin darkblue solid;				
+	border-bottom:thin darkblue solid;				
+	text-align:center;
+
+}
+table.Grid th
+{
+	border-left:thin darkblue solid;				
+	border-bottom:thin darkblue solid;				
+	text-align:center;
+
+}
+
+table.GridRow
+{
+	
+	border-top:thin darkblue solid;
+	border-right:thin darkblue solid;
+	padding:0px 0px 0px 0px ;
+	margin:0px 0px 0px 0px ;	
+	border:5px #3399ff outset;
+}
+table.GridRow td
+{
+/*	border-left:thin darkblue solid;				*/
+	border-bottom:thin darkblue solid;				
+	text-align:center;
+
+}
+table.GridRow th
+{
+	border-left:thin darkblue solid;				
+	border-bottom:thin darkblue solid;				
+	text-align:center;
+
+}
+
+/* SELECT
+{
+	height: 22px;
+}
+*/
+
+
+SELECT.LIST
+{
+	width: 135px;
+	direction: rtl;
+
+}
+
+
+SELECT.3P
+{
+	width: 25px;
+	direction: rtl;
+}
+
+SELECT.40P
+{
+	width: 302px;
+	direction: rtl;
+}
+
+SELECT.30P
+{
+	width: 235px;
+    direction: rtl;
+}
+
+SELECT.25P
+{
+	width: 197px;
+    direction: rtl;
+}
+
+SELECT.17P
+{
+	width: 141px;
+    direction: rtl;
+}
+
+SELECT.15P
+{
+	width: 121px;
+    direction: rtl;
+}
+
+SELECT.12P
+{
+	width: 108px;
+	direction: rtl;
+}
+
+SELECT.6P
+{
+	width: 70px;
+	direction: rtl;
+}
+
+SELECT.3P
+{
+	width: 40px;
+	direction: rtl;
+}
