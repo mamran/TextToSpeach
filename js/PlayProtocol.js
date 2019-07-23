@@ -6,7 +6,8 @@ function initVars ()
     sounfilesList = [];
     audio= new Audio();
 }
-function PlayAudio(WrapperObjID_Name) {
+function PlayAudio(WrapperObjID_Name,tagsNames) {
+    console.log(tagsNames);
     initVars();
     var ObjToScan = document.getElementById(WrapperObjID_Name);
     var inputObjects = ObjToScan.querySelectorAll('[data-soundfilename]');
@@ -15,7 +16,15 @@ function PlayAudio(WrapperObjID_Name) {
         
         if (inputObjects[i].dataset.soundfilename=='NumberOfVotes')
         {
-            console.log (convertNumber(inputObjects[i].value));
+            var NumberInWords = convertNumber(inputObjects[i].value);
+            var NumberInWordsArray = NumberInWords.split(" ");
+            
+            for (var i=0; i<NumberInWordsArray.length; i++) {
+                sounfilesList.push(NumberInWordsArray[i]);
+              }
+  
+            //console.log(NumberInWordsArray);
+            //sounfilesList.push(NumberInWords.split(" "));
             //convertNumberToWords(inputObjects[i].value);
             //sounfilesList.push('Votes Sound File');
         }

@@ -1,7 +1,7 @@
 var he;
 const language =  {
-    'baseSeparator': ' ו',
-    'unitSeparator': 'ו',
+    'baseSeparator': ' ו ',
+    'unitSeparator': ' ו ',
     'withAnd': true,
     'base': {
         '0': 'אפס',
