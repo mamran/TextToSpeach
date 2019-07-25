@@ -7,11 +7,24 @@ function initVars ()
     audio= new Audio();
 }
 function PlayAudio(WrapperObjID_Name,tagsNames) {
-    console.log(tagsNames);
+    //console.log(tagsNames);
     initVars();
+    
     var ObjToScan = document.getElementById(WrapperObjID_Name);
-    var inputObjects = ObjToScan.querySelectorAll('[data-soundfilename]');
-    console.log(inputObjects);
+    var ObjectListByTagNames=[];
+    
+    //Scan All Tag Names and add to List by columns order
+    for (var i = 0; i < tagsNames.length; i++) {
+        
+        queryselector = '[name^="'+tagsNames[i]+'"]';
+        var a = ObjToScan.querySelectorAll(''+queryselector+'');
+        console.log(a);
+
+    }
+    //console.log(ObjectListByTagNames);
+    debugger;
+    var inputObjects = ObjectListByTagNames.querySelectorAll('[data-soundfilename]');
+    
     for (var i = 0; i < inputObjects.length; i++) {
         
         if (inputObjects[i].dataset.soundfilename=='NumberOfVotes')
