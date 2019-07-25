@@ -13,12 +13,33 @@ function PlayAudio(WrapperObjID_Name,tagsNames) {
     var ObjToScan = document.getElementById(WrapperObjID_Name);
     var ObjectListByTagNames=[];
     
+    var AllResultsArray = [];
+    var AllPartiesArray = [];
+    
+    // var SingleResultArray = [];
+    // var SinglePartyArray = [];
+    // var ProtocolArray = [];
+
     //Scan All Tag Names and add to List by columns order
     for (var i = 0; i < tagsNames.length; i++) {
         
         queryselector = '[name^="'+tagsNames[i]+'"]';
-        var a = ObjToScan.querySelectorAll(''+queryselector+'');
-        console.log(a);
+        var ProtocolElements = ObjToScan.querySelectorAll(''+queryselector+'');
+        console.log(ProtocolElements);
+        for (x = 0; x < ProtocolElements.length; x++) {
+            //console.log(ProtocolElements[i]);
+            if (ProtocolElements[i].typeof=='a')
+            {
+                //console.log('Im A');
+                //console.log(ProtocolElement[i].dataset.soundfilename);
+            }
+            else
+            {
+               // console.log('Im input');
+            }
+
+            
+          }
 
     }
     //console.log(ObjectListByTagNames);
