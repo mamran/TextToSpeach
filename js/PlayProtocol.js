@@ -13,36 +13,42 @@ function PlayAudio(WrapperObjID_Name,tagsNames) {
     var ObjToScan = document.getElementById(WrapperObjID_Name);
     var ObjectListByTagNames=[];
     
-    var AllResultsArray = [];
-    var AllPartiesArray = [];
+    var PartiesArray = [];
+    var VotesArray = [];
+    var TagElementsByName;
     
-    // var SingleResultArray = [];
+    
     // var SinglePartyArray = [];
     // var ProtocolArray = [];
 
     //Scan All Tag Names and add to List by columns order
     for (var i = 0; i < tagsNames.length; i++) {
-        
+        TagElementsByName=null;
         queryselector = '[name^="'+tagsNames[i]+'"]';
-        var ProtocolElements = ObjToScan.querySelectorAll(''+queryselector+'');
-        console.log(ProtocolElements);
-        for (x = 0; x < ProtocolElements.length; x++) {
-            //console.log(ProtocolElements[i]);
-            if (ProtocolElements[i].typeof=='a')
-            {
-                //console.log('Im A');
-                //console.log(ProtocolElement[i].dataset.soundfilename);
-            }
-            else
-            {
-               // console.log('Im input');
+        TagElementsByName = ObjToScan.querySelectorAll(''+queryselector+'');
+        console.log(TagElementsByName);
+            for (x = 0; x < TagElementsByName.length; x++) {
+
+                if (TagElementsByName[x].dataset.soundfilename=='NumberOfVotes')
+                {
+                    //var PartyVotesArray = [];
+                    var NumberInWords = convertNumber(TagElementsByName[x].value);
+                    var NumberInWordsArray = NumberInWords.split(" ");
+                    //PartyVotesArray.push(NumberInWordsArray);
+                    VotesArray.push(NumberInWordsArray);
+                }
+                else
+                {
+                    PartiesArray.push(TagElementsByName[x].dataset.soundfilename);
+                }
+            
             }
 
             
-          }
 
     }
-    //console.log(ObjectListByTagNames);
+    console.log(PartiesArray);
+    console.log(VotesArray);
     debugger;
     var inputObjects = ObjectListByTagNames.querySelectorAll('[data-soundfilename]');
     
