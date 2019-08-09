@@ -1,19 +1,30 @@
 ﻿<html>
 	<head>
-			<style>
-					
-				
-					#BaaleTafkidimBAkalpitTbl tr:nth-child(even) 
-					{
-						background-color: rgba(108, 108, 138, 0.164)
-					}
-					</style>
+		<style>
+			#BaaleTafkidimBAkalpitTbl tr:nth-child(even) {
+				background-color: rgba(108, 108, 138, 0.164)
+			}
+	
+			.AudioBtn img {
+				display: block;
+				height: 30px;
+				width: 30px;
+			}
+			.AudioBtnDivider{
+   				width:5px;
+				height:auto;
+				display:inline-block;
+			}
+		</style>
 		<LINK title="8-bit Color Style" media="all" href="democratia.css" type="text/css" rel="StyleSheet">
-			<META HTTP-EQUIV="Content-Type" content="text/html; charset=UTF-8">    </head>
-	<script language="JavaScript" id="MGscript" SRC="/MagicScripts/MGBC033_00_000CS.js"></script>    
-	<script language="JavaScript" src="js/PlayProtocol.js"></script>
-	<script language="JavaScript" src="js/literalNumbers.js"></script>
-	<body dir=rtl      onLoad='MGEventProcessing(event)' onUnLoad='MGEventProcessing(event)' onKeyDown='return MGEventProcessing(event)' onSelectStart='return MGEventProcessing(event)'>
+		<META HTTP-EQUIV="Content-Type" content="text/html; charset=UTF-8">
+		<script language="JavaScript" id="MGscript" SRC="/MagicScripts/MGBC033_00_000CS.js"></script>
+		<script language="JavaScript" src="js/PlayProtocol.js?version=1"></script>
+		<script language="JavaScript" src="js/literalNumbers.js?version=2"></script>
+	</head>
+	<body dir=rtl>
+		
+		    <!-- onLoad='MGEventProcessing(event)' onUnLoad='MGEventProcessing(event)' onKeyDown='return MGEventProcessing(event)' onSelectStart='return MGEventProcessing(event)'> -->
 		<table width="100%" dir="rtl" cellspacing="0"  cellpadding="0"  >
 			<tr>
 					<td class="MainRight" valign=middle width="73%">&nbsp;<a name="lblKotertMasach" tsk="26" number="1" dir="rtl" maxlength="90" >מסך קליטת תוצאות מפרוטוקול קלפי מעטפות חיצוניות    0-001.0      מקור נתונים מקומי</a></td>
@@ -25,7 +36,7 @@
 		</table>
 		<br><br>
 		<table border=0 rules="none"  >
-			<tr >
+			<tr>
 				<td  valign="top"  >
 					<TABLE  id="pizulTbl" style="border-style: solid; border-width: 1px; "  cellpadding="10">
 						<tr class="head"  ><td colspan="2" height="26">תוצאות הצבעה בקלפי לבחירות לכנסת</TD></tr>											
@@ -43,17 +54,20 @@
 						<tr >						
 							<TH > סטטוס הפרוטוקול: </TH>
 							<TD ><a name="lblstatusProtokol" tsk="26" number="12" dir="rtl" maxlength="30">הגיע אך טרם נקלט</a></TD></tr>
-				<tr >						
-						<TH > מועד עדכון אחרון : </TH>
-						<TD ><a name="lblmoedIdkun" tsk="26" number="13" dir="ltr" maxlength="30">11:17 18/07/19</a></TD>
-				</tr>
-				<tr class="head"><TD  colspan=2>משתמש </TD></tr>
-				<tr>
-						<TH > מספר משתמש: </TH>
-						<TD ><a name="lblmisparMishtamesh" tsk="26" number="14" dir="rtl" maxlength="6">999991</a></TD></tr>
-				<tr>
+						<tr >						
+								<TH > מועד עדכון אחרון : </TH>
+								<TD ><a name="lblmoedIdkun" tsk="26" number="13" dir="ltr" maxlength="30">11:17 18/07/19</a></TD>
+						</tr>
+						<tr class="head">
+							<TD  colspan=2>משתמש </TD>
+						</tr>
+						<tr>
+								<TH > מספר משתמש: </TH>
+								<TD ><a name="lblmisparMishtamesh" tsk="26" number="14" dir="rtl" maxlength="6">999991</a></TD></tr>
+						<tr>
 						<TH > שם משתמש: </TH>
-						<TD ><a name="lblshemMishtamesh" tsk="26" number="15" dir="ltr" maxlength="20">DEV-בצלאל (כנסת דוד</a></TD></tr>
+						<TD ><a name="lblshemMishtamesh" tsk="26" number="15" dir="ltr" maxlength="20">DEV-בצלאל (כנסת דוד</a></TD>
+					</tr>
 
 				<tr>
 						<TH height="26" >מזהה פרוטוקול:</TH>
@@ -67,7 +81,7 @@
 						    <input type="button" name="btnLog" tsk="26" number="19"  style="width:70; height:31; font-size:12pt; font-weight:700" class="OPEN" value="לוג">&nbsp;&nbsp;
 						    <input type="button" name="btnShgiot" tsk="26" number="20"  style="width:70; height:31; font-size:12pt; font-weight:700" class="OPEN" value="שגיאות">&nbsp;&nbsp; 
 						<!-- <input value="הדפסה" type="button" name="btnHadpasa" tsk="26" number="21" disabled="true"  style="width:70	; height:31; font-size:12pt; font-weight:700" class="OPEN" ></TD> -->
-						<input type="button" name="btnPlay"  style="width:70	; height:31; font-size:12pt; font-weight:700" class="OPEN" value="השמעה" onclick="PlayAudio('BaaleTafkidimBAkalpitTbl',['lblOtiyotReshima_','kolotreshima_','lblOtiyotReshima2_','kolotreshima2_'])"></TD>
+						<input type="button" name="PlayBack" id="PlayBack"  style="width:70	; height:31; font-size:12pt; font-weight:700" class="OPEN" value="הקראה" onClick="RevealAudioButtons()"></TD>
 				</tr>
 		</TABLE>															
 		</td>
@@ -88,16 +102,16 @@
 												<TH >קולות<br> לרשימה</TH>
 											</TR>
 											<TR height=25>
-												<td nowrap  ><a name="lblOtiyotReshima_0" dir="rtl" maxlength="5"    tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" data-soundfilename="Alarm1.mp3">אמת</a></td>
+												<td nowrap  ><a name="lblOtiyotReshima_0" dir="rtl" maxlength="5"    tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" data-soundfilename="emet.mp3">אמת</a></td>
 												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_0" dir="rtl" maxlength="5"    tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5" data-soundfilename="NumberOfVotes"></TD>								
 												<th>&nbsp;</th>
-												<TD nowrap ><a name="lblOtiyotReshima2_0" dir="rtl" maxlength="5"    tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" data-soundfilename="Alarm3.mp3">נץ</a></TD>								
+												<TD nowrap ><a name="lblOtiyotReshima2_0" dir="rtl" maxlength="5"    tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" data-soundfilename="NoonZadi.mp3">נץ</a></TD>								
 												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_0" dir="rtl" maxlength="5" style="visibility:visible"    tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5" data-soundfilename="NumberOfVotes"></TD>								
 											</TR><TR height=25>
-												<td nowrap  ><a name="lblOtiyotReshima_1" dir="rtl" maxlength="5"    tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" data-soundfilename="Alarm2.mp3">ג</a></td>
+												<td nowrap  ><a name="lblOtiyotReshima_1" dir="rtl" maxlength="5"    tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" data-soundfilename="Gimel.mp3">ג</a></td>
 												<TD nowrap  ><INPUT value="" id="4P" name="kolotreshima_1" dir="rtl" maxlength="5"    tsk="33" number="2" class="txtEdit" style="height: 20; width:36; " size="5" data-soundfilename="NumberOfVotes"></TD>								
 												<th>&nbsp;</th>
-												<TD nowrap ><a name="lblOtiyotReshima2_1" dir="rtl" maxlength="5"    tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" >נר</a></TD>								
+												<TD nowrap ><a name="lblOtiyotReshima2_1" dir="rtl" maxlength="5"    tsk="33" number="3" style="color: #0000FF; font-size: 11pt; font-weight: bold" data-soundfilename="NoonReish.mp3">נר</a></TD>								
 												<TD nowrap ><INPUT value="" id="4P0" name="kolotreshima2_1" dir="rtl" maxlength="5" style="visibility:visible"    tsk="33" number="4" class="txtEdit" style="height: 20; width:36; " size="5" data-soundfilename="NumberOfVotes"></TD>								
 											</TR><TR height=25>
 												<td nowrap  ><a name="lblOtiyotReshima_2" dir="rtl" maxlength="5"    tsk="33" number="1" style="color: #0000FF; font-size: 11pt; font-weight: bold" >דעם</a></td>
@@ -250,8 +264,32 @@
 														<TD ><a name="lblHefresh" tsk="26" number="11" dir="rtl" maxlength="4" style="color: #FF0000; font-weight: bold" >0</a></TD>
 												</tr>
 												<tr><TD colspan="2" >&nbsp;</TD></tr>
+												<!-- ***** Start To Add Audio Buttons -->
+												<tr align="center">
+														<td colspan="2" >
+															<div id="AudioControls" style="padding: 7px 0px;display:none" >
+																	<button class="AudioBtn" id="playBtn" title="התחלת הקראה" onclick="PlayAudio('BaaleTafkidimBAkalpitTbl',['lblOtiyotReshima_','kolotreshima_','lblOtiyotReshima2_','kolotreshima2_'])"><img id="playBtnImg" src="images/play-button.png"></button>
+																	<div class="AudioBtnDivider"></div>
+																	<button class="AudioBtn" id="rewindBtn" title="הקראת ערך קודם" onclick="rewindAudio()" disabled="true"><img src="images/rewind-button.png"></button>
+																	<div class="AudioBtnDivider"></div>
+																	<button class="AudioBtn" id="replayBtn" title="התחלה מחדש" onclick="PlayAudio('BaaleTafkidimBAkalpitTbl',['lblOtiyotReshima_','kolotreshima_','lblOtiyotReshima2_','kolotreshima2_'])" disabled="true" ><img src="images/replay-button.png"></button>
+																	<div class="AudioBtnDivider"></div>
+																	<button class="AudioBtn" id="stopBtn" title="סיום יזום" onclick="HideAudioButtons()"><img src="images/stop-button.png"></button>
+																	<div class="AudioBtnDivider"></div>
+																	<button class="AudioBtn" id="cancelBtn" title="סיום מנהלתי"><img src="images/cancel-button.png"></button>
+																	
+															</div>
+													</td>
+												</tr>
+												<!-- ***** End To Add Audio Buttons -->
 									</TABLE>
-		</td></tr></table>									
-			
-	
+		</td></tr>
+		
+	</table>									
+		<!-- ***** Start To Add  -->	
+		<audio id="player"></audio>
+		<input type="hidden" id="PlayBackOK" name="PlayBackStatus" value="">
+		<!-- ***** End To Add  -->	
+		</body>
+		
 </html>
