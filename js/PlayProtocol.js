@@ -4,6 +4,20 @@ var player;
 var audioFiles;
 var ObjToScan;
 var CurrentPartyIndex;
+
+function IsEmpty(obj) { 
+    if (obj.value == null ||  
+        obj.value == undefined || 
+        obj.value.length == 0) { 
+        
+         console.log(obj.name +" Value cannot be empty\n"); 
+        return true; 
+    } else { 
+         console.log(obj.name+" Your response has been recorded\n"); 
+        return false; 
+    } 
+} 
+
 function initVars ()
 {
    
@@ -28,9 +42,8 @@ function PlayAudio(WrapperObjID_Name,tagsNames) {
         TagElementsByName=null;
         queryselector = '[name^="'+tagsNames[i]+'"]';
         TagElementsByName = ObjToScan.querySelectorAll(''+queryselector+'');
-
+        
             for (x = 0; x < TagElementsByName.length; x++) {
-                    
                 if (TagElementsByName[x].dataset.soundfilename=='NumberOfVotes')
                 {
                     
@@ -41,29 +54,30 @@ function PlayAudio(WrapperObjID_Name,tagsNames) {
                 else
                 {
                    
-                        PartiesArray.push([TagElementsByName[x].name,TagElementsByName[x].dataset.soundfilename]);
+                        PartiesArray.push([TagElementsByName[x].name,TagElementsByName[x].dataset.soundfilename,TagElementsByName[x].value]);
                 }           
             }
+            
     }
     //Add Party Votes To Party Array
      for (y = 0; y < VotesArray.length; y++) {
          PartiesArray[y].splice(2,0,VotesArray[y]);
      }
 
-
+    console.log(PartiesArray);
     for (var i=0; i<PartiesArray.length; i++) {
-        audioFiles.push('Sounds/' +  PartiesArray[i][1]);
+        audioFiles.push(['Sounds/' +  PartiesArray[i][1],PartiesArray[i][0]]);
         if (typeof PartiesArray[i][2]!="undefined")
         {
              for (z = 0; z < PartiesArray[i][2].length; z++) {
 
-                    audioFiles.push('Sounds/' + PartiesArray[i][2][z]);
+                    audioFiles.push(['Sounds/' + PartiesArray[i][2][z],PartiesArray[i][0]]);
               };
         }   
         
   }
   
-  //console.log(PartiesArray);
+  console.log(audioFiles);
   init();
   
   function preloadAudio(url) {
@@ -103,7 +117,8 @@ function init() {
             console.log("end");
             return;
         }
-        console.log(audioFiles);
+        //console.log(audioFiles[1][CurrentPartyIndex]);
+        addArrow(audioFiles[CurrentPartyIndex][1]);
         play(CurrentPartyIndex);
     
     
@@ -111,21 +126,24 @@ function init() {
 
 
     // play the first file
+    console.log(audioFiles[CurrentPartyIndex][1]);
+    addArrow(audioFiles[CurrentPartyIndex][1]);
     play(CurrentPartyIndex);
    
 }
     
 // we start preloading all the audio files
 for (var i in audioFiles) {
-    preloadAudio(audioFiles[i]);
+    preloadAudio(audioFiles[i][0]);
 }
 
 
 }
 function play(index) {
     
-    addArrow(PartiesArray[index][0]);
-        player.src = audioFiles[index];
+    //addArrow(PartiesArray[index][0]);
+    console.log("Now playing: "+ audioFiles[index][0]);
+        player.src = audioFiles[index][0];
         player.play();
     
     
@@ -134,35 +152,23 @@ function play(index) {
 function RevealAudioButtons()
 {
     var AudioControlDiv = document.getElementById("AudioControls");
-    var PlayBackBtn = document.getElementById("PlayBack");
     AudioControlDiv.style.display = 'block';
-    PlayBackBtn.disabled = true;
+    ToggleButtonAvailability("PlayBack");
 }
 
 function HideAudioButtons()
 {
     var AudioControlDiv = document.getElementById("AudioControls");
-    var PlayBackBtn = document.getElementById("PlayBack");
-   
     stopAudio();
     AudioControlDiv.style.display = 'none';
-    PlayBackBtn.disabled = false;
+    ToggleButtonAvailability("PlayBack");
 }
+
 function ChangePlaybtnAction()
 {
-
-    ToggleButtonProperties("playBtn","עצירת הקראה","pauseAudio()","images/pause-button.png");
-    
-    ToggleButtonAvailability("replayBtn");
-    ToggleButtonAvailability("rewindBtn");
-    // var replayBtnObj = document.getElementById("replayBtn");
-    // var rewindBtnObj = document.getElementById("rewindBtn");
-
-    // replayBtnObj.disabled = false;
-    // rewindBtnObj.disabled = false;
-
-    
-    
+    ToggleButtonProperties("playBtn","עצירת הקראה","pauseAudio()","images/pause-button.png");  
+//ToggleButtonAvailability("replayBtn");
+  //  ToggleButtonAvailability("rewindBtn");
 }
 
 function pauseAudio()
@@ -174,8 +180,7 @@ function pauseAudio()
 function resumeAudio()
 {
     ChangePlaybtnAction()
-    player.play();
-    
+    player.play();    
 }
 
 function rewindAudio()
@@ -186,7 +191,7 @@ function rewindAudio()
     {
         ToggleButtonAvailability("rewindBtn") ;
     }
-    addArrow(PartiesArray[CurrentPartyIndex][0]);
+    addArrow(PartiesArray[CurrentPartyIndex][0][1]);
     
 }
 
@@ -200,23 +205,24 @@ function ToggleButtonProperties(btnID,title,onClickFuncName,imgSourceFileName)
 function ToggleButtonAvailability(btnID)
 {
     var BtnObj = document.getElementById(btnID);
-    console.log(BtnObj.disabled);
     BtnObj.disabled = !BtnObj.disabled;
-    console.log(BtnObj.disabled);
 }
+
 function stopAudio()
 {
     clearArrow();
-    player.pause();
-    console.log(player.currentTime);
-    player.currentTime = 0;
-    var playBtnImg =  document.getElementById("playBtnImg");
-    var btnPlayObj = document.getElementById("playBtn");
+    if(typeof(player) != 'undefined' && player != null)
+    {
+        player.pause();
+        if (!isNaN(player.duration)) {
+            player.currentTime = 0;
+        }
+       // player.currentTime = 0;
+    }
+    
     ToggleButtonAvailability("rewindBtn") ;
     ToggleButtonAvailability("replayBtn") ;
-    playBtnImg.src = "images/play-button.png";
-    btnPlayObj.title = "התחלת הקראה"
-    btnPlayObj.setAttribute( "onClick", "PlayAudio('BaaleTafkidimBAkalpitTbl',['lblOtiyotReshima_','kolotreshima_','lblOtiyotReshima2_','kolotreshima2_'])" );
+    ToggleButtonProperties("playBtn","התחלת הקראה","PlayAudio('BaaleTafkidimBAkalpitTbl',['lblOtiyotReshima_','kolotreshima_','lblOtiyotReshima2_','kolotreshima2_'])","images/play-button.png");
     
 }
 function addArrow(reshimaTLbl)
@@ -235,7 +241,5 @@ function clearArrow()
     {
         arrowImg.outerHTML = "";
     }
-    
-    
     
 }
