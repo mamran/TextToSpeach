@@ -5,67 +5,64 @@ var audioFiles;
 var ObjToScan;
 var CurrentPartyIndex;
 
-function IsEmpty(obj) { 
-    if (obj.value == null ||  
-        obj.value == undefined || 
-        obj.value.length == 0) { 
-        
-         console.log(obj.name +" Value cannot be empty\n"); 
-        return true; 
-    } else { 
-         console.log(obj.name+" Your response has been recorded\n"); 
-        return false; 
-    } 
-} 
 
 function initVars ()
 {
-   
+    
     PartiesArray = [];
-    audio = new Audio();
+   
     audioFiles = [];
     
 }
 
 function PlayAudio(WrapperObjID_Name,tagsNames) {
-    //console.log(tagsNames);
+    
     player = document.getElementById('player');
     ChangePlaybtnAction();
     initVars();
-    
     ObjToScan = document.getElementById(WrapperObjID_Name);
     var VotesArray=[];
     var TagElementsByName;
 
     //Scan All Tag Names and add to List by columns order
     for (var i = 0; i < tagsNames.length; i++) {
+        
         TagElementsByName=null;
         queryselector = '[name^="'+tagsNames[i]+'"]';
         TagElementsByName = ObjToScan.querySelectorAll(''+queryselector+'');
         
             for (x = 0; x < TagElementsByName.length; x++) {
+                
                 if (TagElementsByName[x].dataset.soundfilename=='NumberOfVotes')
                 {
-                    
+                    //console.log("value: "+ TagElementsByName[x].value);
                     var NumberInWords = convertNumber(TagElementsByName[x].value);
                     var NumberInWordsArray = NumberInWords.split(" ");
-                    VotesArray.push(NumberInWordsArray);          
+                    VotesArray.push([NumberInWordsArray,TagElementsByName[x].value]); 
+      
                 }
                 else
                 {
-                   
-                        PartiesArray.push([TagElementsByName[x].name,TagElementsByName[x].dataset.soundfilename,TagElementsByName[x].value]);
-                }           
+                    
+                        PartiesArray.push([TagElementsByName[x].name,TagElementsByName[x].dataset.soundfilename]);
+                       
+
+                } 
+                          
             }
             
     }
-    //Add Party Votes To Party Array
+    // Add Party Votes To Party Array
      for (y = 0; y < VotesArray.length; y++) {
-         PartiesArray[y].splice(2,0,VotesArray[y]);
+         PartiesArray[y].splice(2,0,VotesArray[y][0]);
+         PartiesArray[y].splice(3,0,VotesArray[y][1]);
      }
 
-    console.log(PartiesArray);
+
     for (var i=0; i<PartiesArray.length; i++) {
+        //Only parties != 0
+        if (PartiesArray[i][3]!="")
+        {
         audioFiles.push(['Sounds/' +  PartiesArray[i][1],PartiesArray[i][0]]);
         if (typeof PartiesArray[i][2]!="undefined")
         {
@@ -73,8 +70,9 @@ function PlayAudio(WrapperObjID_Name,tagsNames) {
 
                     audioFiles.push(['Sounds/' + PartiesArray[i][2][z],PartiesArray[i][0]]);
               };
-        }   
-        
+        } 
+        audioFiles.push(['Sounds/'+'EndOfProtocolNotify.mp3']);  
+    }
   }
   
   console.log(audioFiles);
@@ -115,6 +113,7 @@ function init() {
             if (CurrentPartyIndex >= audioFiles.length) {
             // end 
             console.log("end");
+            stopAudio();
             return;
         }
         //console.log(audioFiles[1][CurrentPartyIndex]);
@@ -126,9 +125,17 @@ function init() {
 
 
     // play the first file
-    console.log(audioFiles[CurrentPartyIndex][1]);
+    //console.log(audioFiles[CurrentPartyIndex][1]);
+    if (audioFiles.length>0)
+    {
     addArrow(audioFiles[CurrentPartyIndex][1]);
     play(CurrentPartyIndex);
+    }
+    else
+    {
+        alert("אין רשימות להקראה");
+        stopAudio();
+    }
    
 }
     
@@ -229,8 +236,10 @@ function addArrow(reshimaTLbl)
 {
     clearArrow();
     var TD_Element = document.querySelector('[name="'+reshimaTLbl+'"]');
+    if(typeof(TD_Element) != 'undefined' && TD_Element != null)
+    {
     TD_Element.insertAdjacentHTML('afterend', '<img id="arrowImg" border="0" src="images/Arrow.gif"  align="left" width="15px" >');
-    
+    }
     
 }
 function clearArrow()
@@ -243,3 +252,16 @@ function clearArrow()
     }
     
 }
+
+function IsEmpty(obj) { 
+    if (obj.value == null ||  
+        obj.value == undefined || 
+        obj.value.length == 0) { 
+        
+        // console.log(obj.name +" Value cannot be empty\n"); 
+        return true; 
+    } else { 
+        // console.log(obj.name+" Your response has been recorded\n"); 
+        return false; 
+    } 
+} 
