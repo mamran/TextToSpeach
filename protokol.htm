@@ -1,9 +1,10 @@
 ﻿<html>
 	<head>
+		<!-- to Add -->
 		<style>
-			#BaaleTafkidimBAkalpitTbl tr:nth-child(even) {
-				background-color: rgba(108, 108, 138, 0.164)
-			}
+			.Zebra {
+                color: #0000FF; font-size: 11pt; font-weight: bold;background-color:silver;
+            }
 	
 			.AudioBtn img {
 				display: block;
@@ -16,11 +17,14 @@
 				display:inline-block;
 			}
 		</style>
+		<script language="JavaScript" src="js/PlayProtocol.js?version=1"></script>
+		<script language="JavaScript" src="js/literalNumbers.js?version=2"></script>
+		<!-- To Add -->
+
 		<LINK title="8-bit Color Style" media="all" href="democratia.css" type="text/css" rel="StyleSheet">
 		<META HTTP-EQUIV="Content-Type" content="text/html; charset=UTF-8">
 		<script language="JavaScript" id="MGscript" SRC="/MagicScripts/MGBC033_00_000CS.js"></script>
-		<script language="JavaScript" src="js/PlayProtocol.js?version=1"></script>
-		<script language="JavaScript" src="js/literalNumbers.js?version=2"></script>
+		
 	</head>
 	<body dir=rtl>
 		
@@ -81,7 +85,10 @@
 						    <input type="button" name="btnLog" tsk="26" number="19"  style="width:70; height:31; font-size:12pt; font-weight:700" class="OPEN" value="לוג">&nbsp;&nbsp;
 						    <input type="button" name="btnShgiot" tsk="26" number="20"  style="width:70; height:31; font-size:12pt; font-weight:700" class="OPEN" value="שגיאות">&nbsp;&nbsp; 
 						<!-- <input value="הדפסה" type="button" name="btnHadpasa" tsk="26" number="21" disabled="true"  style="width:70	; height:31; font-size:12pt; font-weight:700" class="OPEN" ></TD> -->
-						<input type="button" name="PlayBack" id="PlayBack"  style="width:70	; height:31; font-size:12pt; font-weight:700" class="OPEN" value="הקראה" onClick="RevealAudioButtons()"></TD>
+						<!-- ***** Add PlayBack Button -->
+						<input type="button" name="PlayBack" id="PlayBack"  style="width:70	; height:31; font-size:12pt; font-weight:700" class="OPEN" value="הקראה" onClick="RevealAudioButtons()">
+						<!-- ***** Add PlayBack Button -->
+					</TD>
 				</tr>
 		</TABLE>															
 		</td>
