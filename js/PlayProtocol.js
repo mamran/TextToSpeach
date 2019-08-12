@@ -13,7 +13,9 @@ function initVars ()
 }
 
 function PlayAudio() {
-  
+    
+   
+   
     ChangePlaybtnAction();
     var f = document.getElementById('lblstatusPlayback');
     f.textContent ="בתהליך";
@@ -22,7 +24,7 @@ function PlayAudio() {
     }, 1000);
 
     init();
-  // we start preloading all the audio files
+ 
 
 
 
@@ -49,7 +51,7 @@ function init() {
             HideAudioButtons();
             return;
         }
-        //console.log(audioFiles[1][CurrentPartyIndex]);
+
         addArrow(audioFiles[CurrentPartyIndex][1]);
         play(CurrentPartyIndex);
     
@@ -58,7 +60,7 @@ function init() {
 
 
     // play the first file
-    //console.log(audioFiles[CurrentPartyIndex][1]);
+
     if (audioFiles.length>0)
     {
     addArrow(audioFiles[CurrentPartyIndex][1]);
@@ -71,21 +73,17 @@ function init() {
     }
    
 }
-    
-
-
 
 }
+
 function play(index) {
-    
-    //addArrow(PartiesArray[index][0]);
-    console.log("Now playing: "+ audioFiles[index][0]);
+
+        console.log("Now playing: "+ audioFiles[index][0]);
         player.src = audioFiles[index][0];
         player.play();
     
-    
-    
 }
+
 function RevealAudioButtons()
 {
     var AudioControlDiv = document.getElementById("AudioControls");
@@ -171,7 +169,6 @@ function ToggleButtonProperties(btnID,title,onClickFuncName,imgSourceFileName)
 function ToggleButtonAvailability(btnName,ChangeBtnColors)
 {
     var BtnObj = document.getElementsByName(btnName);
-    console.log(BtnObj);
     var btn, i=0;
     while(btn=BtnObj[i++]) {
         btn.disabled=!btn.disabled;
@@ -232,11 +229,8 @@ function IsEmpty(obj) {
     if (obj.value == null ||  
         obj.value == undefined || 
         obj.value.length == 0) { 
-        
-        // console.log(obj.name +" Value cannot be empty\n"); 
         return true; 
     } else { 
-        // console.log(obj.name+" Your response has been recorded\n"); 
         return false; 
     } 
 } 
@@ -244,6 +238,7 @@ function IsEmpty(obj) {
 function CreateAudioFiles(WrapperObjID_Name,tagsNames) {
     
     player = document.getElementById('player');
+    
     //ChangePlaybtnAction();
     initVars();
     ObjToScan = document.getElementById(WrapperObjID_Name);
@@ -261,12 +256,6 @@ function CreateAudioFiles(WrapperObjID_Name,tagsNames) {
                 
                 if (TagElementsByName[x].dataset.soundfilename=='NumberOfVotes')
                 {
-                    //console.log(TagElementsByName[x].name);
-                    //var Votes = document.getElementsByName(TagElementsByName[x].name).item(0);
-                    //console.log(Votes);
-                    //Votes.setAttribute("disabled",true);
-                    
-                    
 
                     var NumberInWords = convertNumber(TagElementsByName[x].value);
                     var NumberInWordsArray = NumberInWords.split(" ");
@@ -323,6 +312,7 @@ function CreateAudioFiles(WrapperObjID_Name,tagsNames) {
 function PreloadAudioFilesToCache()
 {
     ToggleVotesTable();
+     // we start preloading all the audio files
     for (var i in audioFiles) {
         console.log("Preload audio file:" + audioFiles[i][0]);
         preloadAudio(audioFiles[i][0]);
@@ -334,6 +324,7 @@ function PreloadAudioFilesToCache()
         // the file will be kept by the browser as cache
         audio.addEventListener('canplaythrough', loadedAudio, false);
         audio.src = url;
+        audio.playbackRate = 0.5;
     }
     var loaded = 0;
     function loadedAudio() {
