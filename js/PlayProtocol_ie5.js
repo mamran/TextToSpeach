@@ -79,17 +79,27 @@ function init() {
 
 }
 
+
+
+
 function play(index) {
     
     var audioURL = audioFiles[index][0];
     console.log("Now playing: "+ audioURL);
     
     player.src = audioURL;
-    //player.play();
-    player.location.replace('jsplayer.htm?'+audioURL);      
+    sleep(3000);
+        
     
 }
-
+function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+      if ((new Date().getTime() - start) > milliseconds){
+        break;
+      }
+    }
+  }
 function RevealAudioButtons()
 {
     var AudioControlDiv = document.getElementById("AudioControls");
