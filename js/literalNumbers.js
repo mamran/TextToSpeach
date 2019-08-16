@@ -1,5 +1,5 @@
 var he;
-const language =  {
+var language =  {
     'baseSeparator': 've.mp3',
     'unitSeparator': 've.mp3',
     'withAnd': true,
@@ -280,7 +280,7 @@ function convertNumber(number) {
     return convert(number);
 }
 /* eslint-enable no-magic-numbers */
-const literalNumbers =  {
+var literalNumbers =  {
     convertNumber: convertNumber,
     defaults: defaults
 };

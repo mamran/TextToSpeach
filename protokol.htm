@@ -1,3 +1,4 @@
+
 <html>
             <head>
                 	<style>
@@ -16,13 +17,21 @@
                                 display:inline-block;
                             }
                         </style>
-                        <script language="JavaScript" src="js/PlayProtocol.js?version=23"></script>
+                        <script language="JavaScript" src="js/PlayProtocol_ie5.js?version=23"></script>
+                        <!-- <script language="JavaScript" src="js/PlayProtocol.js?version=23"></!--> -->
                         <script language="JavaScript" src="js/literalNumbers.js?version=22"></script>
+                        
+                       
+                        
+                        
+
                         <!-- To Add -->
                         <LINK title="8-bit Color Style" media="all" href="democratia.css" type="text/css" rel="StyleSheet">
             <META HTTP-EQUIV="Content-Type" content="text/html; charset=UTF-8">    </head>
             <script language="JavaScript" id="MGscript" SRC="/MagicScripts33/MGBC033_00_000CS.js"></script>    <body dir=rtl     >
-                        <table width="100%" dir="rtl" cellspacing="0"  cellpadding="0"  >
+               
+                
+                <table width="100%" dir="rtl" cellspacing="0"  cellpadding="0"  >
                                     <tr>
                                                             <td class="MainRight" valign=middle width="73%">&nbsp;<a name="lblKotertMasach" tsk="337" number="1" dir="rtl" maxlength="90" >מסך עדכון תוצאות מפרוטוקול קלפי  9000-197.4 מקור נתונים מקומי</a></td>
                                                             <td class="MainLeft" align="left" height="24" colspan="2" width="27%">&nbsp;&nbsp;                       S60.13&nbsp; 
@@ -437,14 +446,34 @@
                     <!-- ***** End To Add Audio Buttons -->
                     </table>  
                         <!-- ***** Start To Add  -->	
-		<audio id="player"></audio>
+		<!-- <audio id="player"></audio> -->
         <input type="hidden" id="PlayBackDone" name="PlayBackDone" value="false">
         <input type="hidden" id="PlayBackManger" name="PlayBackManger" value="false">
         <input type="hidden" id="PlayBackIsMandatory" name="PlayBackIsMandatory" value="true">
         <input type="hidden" id="PlayBackStartDateTime" name="PlayBackStartDateTime" value="true">
         <input type="hidden" id="PlayBackEndDateTime" name="PlayBackEndDateTime" value="true">
 
-		<!-- ***** End To Add  -->	                                                                                                    
+        <!-- ***** End To Add  -->	                                                                                                    
+        <BGSOUND id="BGSOUND_ID" LOOP=1 SRC="">
+            
+            <script type="text/javascript" language="JavaScript">
+          
+            function playSound(audioURL) {
+             if (document.all) document.all['BGSOUND_ID'].src=audioURL;
+             else self.iplayer.location.replace('jsplayer.htm?'+audioURL);
+            }
+            
+            function stopSound() {
+             if (document.all) document.all['BGSOUND_ID'].src='jsilence.mid';
+             else self.iplayer.location.replace('jsplayer.htm?stop');
+            }
+            
+            </script>
+            
+            <form name=myform>
+            <input type=button value="Play Sound" onClick="playSound('Sounds/StartOfProtocolNotify.mp3')">
+            <input type=button value="Stop Sound" onClick="stopSound()">
+            </form>      
                  </body>                   
     <script>
         
@@ -472,8 +501,7 @@
             };            
         
         };
-        
-          
+    
     </script>
 </html>
 

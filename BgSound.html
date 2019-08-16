@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <BGSOUND id="BGSOUND_ID" LOOP=1 SRC="Sounds/EndOfProtocolNotify.mp3">
+
+        <script type="text/javascript" language="JavaScript">
+        <!--
+        function playSound(audioURL) {
+         if (document.all) document.all['BGSOUND_ID'].src=audioURL;
+         else self.iplayer.location.replace('jsplayer.htm?'+audioURL);
+        }
+        
+        function stopSound() {
+         if (document.all) document.all['BGSOUND_ID'].src='jsilence.mid';
+         else self.iplayer.location.replace('jsplayer.htm?stop');
+        }
+        //-->
+        </script>
+        
+        <form name=myform>
+        <input type=button value="Play Sound" onClick="playSound('Sounds/StartOfProtocolNotify.mp3')">
+        <input type=button value="Stop Sound" onClick="stopSound()">
+        </form>      
+       
+</body>
+</html>

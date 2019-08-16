@@ -14,7 +14,9 @@ function initVars ()
 
 function PlayAudio() {
     
-   
+    
+    
+    
    
     ChangePlaybtnAction();
     var f = document.getElementById('lblstatusPlayback');
@@ -80,7 +82,9 @@ function play(index) {
 
         console.log("Now playing: "+ audioFiles[index][0]);
         player.src = audioFiles[index][0];
+        
         player.play();
+        player.playbackRate.value = 2.0;
     
 }
 
@@ -208,7 +212,6 @@ function addArrow(reshimaTLbl)
 {
     clearArrow();
     var TD_Element = document.querySelector('[name="'+reshimaTLbl+'"]');
-    debugger
     if(typeof(TD_Element) != 'undefined' && TD_Element != null)
     {
     TD_Element.insertAdjacentHTML('afterend', '<img id="arrowImg" border="0" src="images/Arrow.png"  align="left" width="15px" >');
@@ -252,7 +255,7 @@ function CreateAudioFiles(WrapperObjID_Name,tagsNames) {
         TagElementsByName=null;
         queryselector = '[name^="'+tagsNames[i]+'"]';
         TagElementsByName = ObjToScan.querySelectorAll(''+queryselector+'');
-        console.log(TagElementsByName.length);
+        
             for (x = 0; x < TagElementsByName.length; x++) {
                 
                 if (TagElementsByName[x].dataset.soundfilename=='NumberOfVotes')
@@ -325,7 +328,15 @@ function PreloadAudioFilesToCache()
         // the file will be kept by the browser as cache
         audio.addEventListener('canplaythrough', loadedAudio, false);
         audio.src = url;
-        audio.playbackRate = 0.5;
+        audio.type = "audio/mpeg";
+        var sound = new Howl({
+            src: [url]
+          });
+          sound.rate(1.5);
+          sound.play();
+          debugger;
+        
+        
     }
     var loaded = 0;
     function loadedAudio() {

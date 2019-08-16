@@ -1,4 +1,4 @@
-var PartiesArray;
+﻿var PartiesArray;
 var PartyIndex;
 var player;
 var audioFiles;
@@ -59,12 +59,15 @@ function init() {
     };
 
 
-    // play the first file
+    
 
     if (audioFiles.length>0)
     {
-    addArrow(audioFiles[CurrentPartyIndex][1]);
-    play(CurrentPartyIndex);
+        for (CurrentPartyIndex = 0; CurrentPartyIndex < audioFiles.length; CurrentPartyIndex++) {
+            addArrow(audioFiles[CurrentPartyIndex][1]);
+            
+            play(CurrentPartyIndex);
+        }
     }
     else
     {
@@ -77,10 +80,13 @@ function init() {
 }
 
 function play(index) {
-
-        console.log("Now playing: "+ audioFiles[index][0]);
-        player.src = audioFiles[index][0];
-        player.play();
+    
+    var audioURL = audioFiles[index][0];
+    console.log("Now playing: "+ audioURL);
+    
+    player.src = audioURL;
+    //player.play();
+    player.location.replace('jsplayer.htm?'+audioURL);      
     
 }
 
@@ -206,12 +212,14 @@ function stopAudio()
 }
 function addArrow(reshimaTLbl)
 {
+    
     clearArrow();
-    var TD_Element = document.querySelector('[name="'+reshimaTLbl+'"]');
-    debugger
-    if(typeof(TD_Element) != 'undefined' && TD_Element != null)
+    console.log(reshimaTLbl);
+    var TD_Element = document.getElementsByName(reshimaTLbl)[0];
+    console.log(TD_Element);
+    if(undefined != undefined)
     {
-    TD_Element.insertAdjacentHTML('afterend', '<img id="arrowImg" border="0" src="images/Arrow.png"  align="left" width="15px" >');
+    TD_Element.appendChild('<img id="arrowImg" border="0" src="images/Arrow.png"  align="left" width="15px" >');
     }
     
 }
@@ -226,60 +234,75 @@ function clearArrow()
     
 }
 
-function IsEmpty(obj) { 
-    if (obj.value == null ||  
-        obj.value == undefined || 
-        obj.value.length == 0) { 
-        return true; 
-    } else { 
-        return false; 
-    } 
-} 
+   
 
 function CreateAudioFiles(WrapperObjID_Name,tagsNames) {
     
-    player = document.getElementById('player');
+    player = document.getElementById('BGSOUND_ID');
     
     //ChangePlaybtnAction();
     initVars();
     ObjToScan = document.getElementById(WrapperObjID_Name);
     var VotesArray=[];
-    var TagElementsByName;
+    
 
     //Scan All Tag Names and add to List by columns order
     for (var i = 0; i < tagsNames.length; i++) {
         
-        TagElementsByName=null;
-        queryselector = '[name^="'+tagsNames[i]+'"]';
-        TagElementsByName = ObjToScan.querySelectorAll(''+queryselector+'');
-        console.log(TagElementsByName.length);
-            for (x = 0; x < TagElementsByName.length; x++) {
-                
-                if (TagElementsByName[x].dataset.soundfilename=='NumberOfVotes')
-                {
+        var TableColumnsCount  =ObjToScan .rows[1].cells.length;
+        //שולף את מס' הטורים בטבלה
+        console.log(TableColumnsCount);
+        //שולף את מס' השורות בטבלה
+        var TableRowsCount = ObjToScan.rows.length;
+        console.log(TableRowsCount);
+	        //עובר על כל השורות בכל טור וטור
+            for (CurrentCol = 0; CurrentCol < TableColumnsCount; CurrentCol++) {
 
-                    var NumberInWords = convertNumber(TagElementsByName[x].value);
-                    var NumberInWordsArray = NumberInWords.split(" ");
-                    VotesArray.push([NumberInWordsArray,TagElementsByName[x].value]); 
-      
-                }
-                else
-                {
+                for (CurrentRow= 2; CurrentRow < TableRowsCount; CurrentRow++)
+                { 
+                    //שולף את התא בשורה
+                    var cellObjects = ObjToScan.rows[CurrentRow].cells[CurrentCol];
                     
-                        PartiesArray.push([TagElementsByName[x].name,TagElementsByName[x].dataset.soundfilename]);
-                       
+                    //עובר על כל האובייקטים בתא
+                    for (CurrentCellObj = 0; CurrentCellObj < cellObjects.childNodes.length; CurrentCellObj++) {
+                        var elementObj = cellObjects.childNodes[CurrentCellObj];
+                        var elementName = elementObj.name;
+                        if (typeof (elementName) != 'undefined' && elementName != null) {
+                            var elementNameContainSubstr = elementName.indexOf(tagsNames[i]);
+                            
+                            if (elementNameContainSubstr!== -1)
+                            {
+                               
+                                 if (elementObj.getAttribute('data-soundfilename')=='NumberOfVotes')
+                                    {
+                        
+                                        var NumberInWords = convertNumber(elementObj.value);
+                                        var NumberInWordsArray = NumberInWords.split(" ");
+                                        VotesArray.push([NumberInWordsArray,elementObj.value]); 
+                        
+                                    }
+                                else
+                                {
+                                
+                                        PartiesArray.push([elementObj.name,elementObj.getAttribute('data-soundfilename')]);
+                                } 
+                            }
+                        }
+                        
+                    }
+                    
 
-                } 
-                          
+                }	
             }
-            
+                
+	       
     }
     // Add Party Votes To Party Array
      for (y = 0; y < VotesArray.length; y++) {
          PartiesArray[y].splice(2,0,VotesArray[y][0]);
          PartiesArray[y].splice(3,0,VotesArray[y][1]);
      }
-
+//console.log (PartiesArray);
      //Create Audio Files Array To Play
     for (var i=0; i<PartiesArray.length; i++) {
         
@@ -307,7 +330,9 @@ function CreateAudioFiles(WrapperObjID_Name,tagsNames) {
         audioFiles.push(['Sounds/'+'EndOfProtocolNotify.mp3']);  
     }
     console.log("audioFiles.length "+audioFiles.length);
-    PreloadAudioFilesToCache();
+   // //console.log(audioFiles);
+   
+   // PreloadAudioFilesToCache();
 }
 
 function PreloadAudioFilesToCache()
@@ -320,7 +345,9 @@ function PreloadAudioFilesToCache()
     }
       
       function preloadAudio(url) {
+        
         var audio = new Audio();
+        
         // once this file loads, it will call loadedAudio()
         // the file will be kept by the browser as cache
         audio.addEventListener('canplaythrough', loadedAudio, false);
