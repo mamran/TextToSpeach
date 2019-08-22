@@ -57,7 +57,7 @@ var language =  {
             'singular': 'מאה',
             'plural': 'מאות',
             'avoidPrefixException': [1],
-            'useBaseInstead': true,
+            'useBaseInstead': false,
             'useBaseException': []
         },
         {

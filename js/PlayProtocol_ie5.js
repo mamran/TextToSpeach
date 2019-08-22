@@ -5,189 +5,169 @@ var audioFiles;
 var ObjToScan;
 var CurrentPartyIndex;
 var PlaybackStatusBlink;
+var VotesPlaylist;
+var PlayBackDone;
 
 function initVars ()
 {
+   
+    
+    VotesPlaylist = new jPlayerPlaylist({
+        jPlayer: "#jquery_jplayer_1",
+        cssSelectorAncestor: "#jp_container_1"
+    },
+     [
+        
+        
+    ], {
+        swfPath: "jplayer",
+        supplied: "oga, mp3",
+        wmode: "window",
+        useStateClassSkin: true,
+        autoBlur: false,
+        smoothPlayBar: true,
+        keyEnabled: true,
+        play: function(e) {
+            addArrow(e.jPlayer.status.media.title);
+            if (VotesPlaylist.current>1)
+            {
+            //alert ('play '+VotesPlaylist.current+' '+e.jPlayer.status.media.title);
+            ToggleButtonDisabled("rewindBtn",false,true) ;
+            ToggleButtonDisabled("replayBtn",false,true) ;
+            
+            }
+
+        },
+        ended: function(e) {
+            
+            //console.log("end"+VotesPlaylist.playlist.length);
+            //console.log("current: "+VotesPlaylist.current);
+            //console.log(PlayBackDone.value);
+            if (VotesPlaylist.playlist.length==VotesPlaylist.current+1 && e.jPlayer.status.media.title=="EndOfProtocolNotify")
+            {
+               
+                PlayBackDone.value = "true";
+                HideAudioButtons();
+                //alert ("end of list");
+            }
+            //console.log(VotesPlaylist.playlistindexOf(e.jPlayer.status.media.title));
+            //VotesPlaylist.current=0;   
+        },
+        pause: function(e){
+            //alert ('pause '+VotesPlaylist.current+' '+e.jPlayer.status.media.title);
+            if (VotesPlaylist.current>1)
+            {
+                
+                ToggleButtonDisabled("rewindBtn",false,false) ;
+                ToggleButtonDisabled("replayBtn",false,false) ;
+            }
+        }
+
+    });
+
     PartiesArray = [];   
-    audioFiles = [];    
+    audioFiles = []; 
+    PlayBackDone = document.getElementById('PlayBackDone'); 
+    
 }
 
-function PlayAudio() {
-    
-   
-   
-    ChangePlaybtnAction();
+
+
+function RevealAudioButtons()
+{
+    var AudioControlDiv = document.getElementById("tblSound");
+    AudioControlDiv.style.display = 'block';
+    //disable all form buttons
+    ToggleButtonDisabled("PlayBack",true,true);
+    ToggleButtonDisabled("btnShgiot",true,true);
+    ToggleButtonDisabled("btnLog",true,true);
+    ToggleButtonDisabled("btnShmira",true,true);
+    ToggleButtonDisabled("btnBdika",true,true);
+
+    //blink Playback staus
     var f = document.getElementById('lblstatusPlayback');
-    f.textContent ="בתהליך";
+    f.innerText ="בתהליך";
     PlaybackStatusBlink = setInterval(function() {
         f.style.display = (f.style.display == 'none' ? '' : 'none');
     }, 1000);
-
-    init();
- 
-
-
-
-function init() {
-
-    // do your stuff here, audio has been loaded
-    // for example, play all files one after the other
-    CurrentPartyIndex = 0;
-    // once the player ends, play the next one
-    player.onended = function() {
-        CurrentPartyIndex++;
-        
-        
-            if (CurrentPartyIndex >= audioFiles.length) {
-            // end 
-            console.log("end");
-            stopAudio();
-            var f = document.getElementById('lblstatusPlayback');
-            f.textContent ="בוצעה";
-            clearInterval(PlaybackStatusBlink);
-            
-            var PlayBackDone = document.getElementById('PlayBackDone');
-            PlayBackDone.value = "true";
-            HideAudioButtons();
-            return;
-        }
-
-        addArrow(audioFiles[CurrentPartyIndex][1]);
-        play(CurrentPartyIndex);
-    
-    
-    };
-
-
-    //fffff
-
-    if (audioFiles.length>0)
-    {
-        for (CurrentPartyIndex = 0; CurrentPartyIndex < audioFiles.length; CurrentPartyIndex++) {
-            addArrow(audioFiles[CurrentPartyIndex][1]);
-            
-            play(CurrentPartyIndex);
-        }
-    }
-    else
-    {
-        alert("אין רשימות להקראה");
-        stopAudio();
-    }
-   
-}
-
-}
-
-
-
-
-function play(index) {
-    
-    var audioURL = audioFiles[index][0];
-    console.log("Now playing: "+ audioURL);
-    
-    player.src = audioURL;
-    sleep(3000);
-        
-    
-}
-function sleep(milliseconds) {
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-      if ((new Date().getTime() - start) > milliseconds){
-        break;
-      }
-    }
-  }
-function RevealAudioButtons()
-{
-    var AudioControlDiv = document.getElementById("AudioControls");
-    AudioControlDiv.style.display = 'block';
-    //disable all form buttons
-    ToggleButtonAvailability("PlayBack",true);
-    ToggleButtonAvailability("btnShgiot",true);
-    ToggleButtonAvailability("btnLog",true);
-    ToggleButtonAvailability("btnShmira",true);
-    ToggleButtonAvailability("btnBdika",true);
     
 }
 
 function HideAudioButtons()
 {
-    var AudioControlDiv = document.getElementById("AudioControls");
-    stopAudio();
+    var AudioControlDiv = document.getElementById("tblSound");
     AudioControlDiv.style.display = 'none';
     ToggleVotesTable();
     //enable all form buttons
-    ToggleButtonAvailability("PlayBack",true);
-    ToggleButtonAvailability("btnShgiot",true);
-    ToggleButtonAvailability("btnLog",true);
-    ToggleButtonAvailability("btnShmira",true);
-    ToggleButtonAvailability("btnBdika",true);
+    ToggleButtonDisabled("PlayBack",true,false);
+    ToggleButtonDisabled("btnShgiot",true,false);
+    ToggleButtonDisabled("btnLog",true,false);
+    ToggleButtonDisabled("btnShmira",true,false);
+    ToggleButtonDisabled("btnBdika",true,false);
+    ToggleButtonDisabled("rewindBtn",false,true) ;
+    ToggleButtonDisabled("replayBtn",false,true) ;
     //Set playback status
     clearInterval(PlaybackStatusBlink);
-    var PlayBackDone = document.getElementById('PlayBackDone');
-    
     
     var lblstatusPlayback = document.getElementById('lblstatusPlayback');
-     if (PlayBackDone.value != "true"){
+    console.log(PlayBackDone.value);
+     if (PlayBackDone.value != 'true'){
         
-        lblstatusPlayback.textContent ="לא בוצעה";
+        lblstatusPlayback.innerText ="לא בוצעה";
         lblstatusPlayback.style.display="block";
      }
      else
      {
-        lblstatusPlayback.textContent ="בוצעה";
+        lblstatusPlayback.innerText ="בוצעה";
         lblstatusPlayback.style.display="block";
      }
+     clearArrow();       
+     $("#jquery_jplayer_1").jPlayer("clearMedia");
 
+     
     
 }
 
-function ChangePlaybtnAction()
+function replay()
 {
-    ToggleButtonProperties("playBtn","עצירת הקראה","pauseAudio()","images/pause-button.png");  
+    $("#jquery_jplayer_1").jPlayer("stop");
+    VotesPlaylist.select(0);
+    //VotesPlaylist.play(0);
+    addArrow(VotesPlaylist.playlist[1].title);
 
 }
 
-function pauseAudio()
-{
-    player.pause();
-    ToggleButtonProperties("playBtn","התחלת הקראה","resumeAudio()","images/play-button.png");
-}
-
-function resumeAudio()
-{
-    ChangePlaybtnAction()
-    player.play();    
-}
 
 function rewindAudio()
 {
-    pauseAudio();
-    CurrentPartyIndex--;
-    if (CurrentPartyIndex==0)
+    if (VotesPlaylist.current>1)
     {
-        ToggleButtonAvailability("rewindBtn",false) ;
-    }
-    addArrow(PartiesArray[CurrentPartyIndex][0][1]);
+        $("#jquery_jplayer_1").jPlayer("stop");
+        var reshimaIndexTogo;
     
+        if (VotesPlaylist.current % 2 >0) 
+        {
+            reshimaIndexTogo=VotesPlaylist.current-2;
+        }
+        else
+        {
+            reshimaIndexTogo=VotesPlaylist.current-1;
+        }
+        VotesPlaylist.select(reshimaIndexTogo);
+        console.log(VotesPlaylist.playlist[reshimaIndexTogo].title);
+    
+        addArrow(VotesPlaylist.playlist[reshimaIndexTogo].title);
+    }
+       
 }
 
-function ToggleButtonProperties(btnID,title,onClickFuncName,imgSourceFileName)
-{
-    var btnPlayObj = document.getElementById(btnID);
-    btnPlayObj.title = title;
-    btnPlayObj.setAttribute( "onClick", onClickFuncName );
-    btnPlayObj.firstChild.src = imgSourceFileName;
-}
-function ToggleButtonAvailability(btnName,ChangeBtnColors)
+
+function ToggleButtonDisabled(btnName,ChangeBtnColors,isDisabled)
 {
     var BtnObj = document.getElementsByName(btnName);
     var btn, i=0;
     while(btn=BtnObj[i++]) {
-        btn.disabled=!btn.disabled;
+        btn.disabled=isDisabled;
         if (ChangeBtnColors){
             if (btn.disabled)
             {
@@ -204,34 +184,14 @@ function ToggleButtonAvailability(btnName,ChangeBtnColors)
    
 }
 
-function stopAudio()
-{
-    clearArrow();
-    if(typeof(player) != 'undefined' && player != null)
-    {
-        player.pause();
-        if (!isNaN(player.duration)) {
-            player.currentTime = 0;
-        }
-    }
-    
-    ToggleButtonAvailability("rewindBtn",false) ;
-    ToggleButtonAvailability("replayBtn",false) ;
-    ToggleButtonProperties("playBtn","התחלת הקראה","PlayAudio()","images/play-button.png");
-    
-}
+
 function addArrow(reshimaTLbl)
 {
     
-    clearArrow();
-    console.log(reshimaTLbl);
-    var TD_Element = document.getElementsByName(reshimaTLbl)[0];
-    console.log(TD_Element);
-    if(undefined != undefined)
-    {
-    TD_Element.appendChild('<img id="arrowImg" border="0" src="images/Arrow.png"  align="left" width="15px" >');
-    }
-    
+    clearArrow();   
+    var TD_Element = $("a[name="+reshimaTLbl+"]");
+    TD_Element.prepend('<img id="arrowImg" border="0" src="images/Arrow.png"  style="position:absolute;width:15px;float:right; margin-right:50px;clear:both;">');
+   
 }
 function clearArrow()
 {
@@ -248,9 +208,6 @@ function clearArrow()
 
 function CreateAudioFiles(WrapperObjID_Name,tagsNames) {
     
-    player = document.getElementById('BGSOUND_ID');
-    
-    //ChangePlaybtnAction();
     initVars();
     ObjToScan = document.getElementById(WrapperObjID_Name);
     var VotesArray=[];
@@ -321,13 +278,28 @@ function CreateAudioFiles(WrapperObjID_Name,tagsNames) {
         {
             if (audioFiles.length==0){
                 
-                audioFiles.push(['Sounds/'+'StartOfProtocolNotify.mp3']);  
+                audioFiles.push(['Sounds/StartOfProtocolNotify.mp3']); 
+                VotesPlaylist.add({
+                    title: "StartOfProtocolNotify",
+                    mp3: "Sounds/StartOfProtocolNotify.mp3"
+                   
+                }); 
             }
                 audioFiles.push(['Sounds/' +  PartiesArray[i][1],PartiesArray[i][0]]);
+                VotesPlaylist.add({
+                    title: PartiesArray[i][0],
+                    mp3: 'Sounds/' +  PartiesArray[i][1]
+                   
+                }); 
             if (typeof PartiesArray[i][2]!="undefined")
         {
             for (z = 0; z < PartiesArray[i][2].length; z++) {
                 audioFiles.push(['Sounds/' + PartiesArray[i][2][z],PartiesArray[i][0]]);
+                VotesPlaylist.add({
+                    title: PartiesArray[i][0],
+                    mp3: 'Sounds/' + PartiesArray[i][2][z]
+                   
+                }); 
             };
         } 
         
@@ -337,50 +309,26 @@ function CreateAudioFiles(WrapperObjID_Name,tagsNames) {
 
     if (audioFiles.length>0)
     {
-        audioFiles.push(['Sounds/'+'EndOfProtocolNotify.mp3']);  
+        audioFiles.push(['Sounds/EndOfProtocolNotify.mp3']);  
+        VotesPlaylist.add({
+            title: "EndOfProtocolNotify",
+            mp3: "Sounds/EndOfProtocolNotify.mp3"
+           
+        }); 
     }
-    console.log("audioFiles.length "+audioFiles.length);
-   // //console.log(audioFiles);
+   //השבתת טבלת קולות לרשימות
+   ToggleVotesTable();
+
+   console.log("VotesPlaylist length "+ VotesPlaylist.playlist.length);
+   //VotesPlaylist.next();  //פעולה שניתן לבצע על רשימה
    
-   // PreloadAudioFilesToCache();
+
+  
+  
+   
 }
 
-function PreloadAudioFilesToCache()
-{
-    ToggleVotesTable();
-     // we start preloading all the audio files
-    for (var i in audioFiles) {
-        console.log("Preload audio file:" + audioFiles[i][0]);
-        preloadAudio(audioFiles[i][0]);
-    }
-      
-      function preloadAudio(url) {
-        
-        var audio = new Audio();
-        
-        // once this file loads, it will call loadedAudio()
-        // the file will be kept by the browser as cache
-        audio.addEventListener('canplaythrough', loadedAudio, false);
-        audio.src = url;
-        audio.playbackRate = 0.5;
-    }
-    var loaded = 0;
-    function loadedAudio() {
-        // this will be called every time an audio file is loaded
-        // we keep track of the loaded files vs the requested files
-        
-        loaded++;
-        
-        if (loaded == audioFiles.length){
-            // all have loaded
-            
-            console.log (audioFiles.length+" AudioFiles Loaded");
-            
-           
-        }
-       
-    }
-}
+
 
 function ToggleVotesTable()
 {

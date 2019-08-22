@@ -1,6 +1,6 @@
-
 <html>
             <head>
+                    <meta http-equiv="X-UA-Compatible" content="IE=5" />
                 	<style>
                             .Zebra {
                                 color: #0000FF; font-size: 11pt; font-weight: bold;background-color:silver;
@@ -17,19 +17,22 @@
                                 display:inline-block;
                             }
                         </style>
-                        <script language="JavaScript" src="js/PlayProtocol_ie5.js?version=23"></script>
-                        <!-- <script language="JavaScript" src="js/PlayProtocol.js?version=23"></!--> -->
+                         <!-- To Add -->
+                         <LINK  href="jplayer.min.css" type="text/css" rel="StyleSheet">   
+                         <script type="text/javascript" src="js/jquery.min.js"></script>
+                         <script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+                         <script type="text/javascript" src="js/jplayer.playlist.min.js"></script>
+                        <script language="JavaScript" src="js/PlayProtocol_ie5.js?version=23"></script>                        
                         <script language="JavaScript" src="js/literalNumbers.js?version=22"></script>
-                        
-                       
-                        
-                        
-
-                        <!-- To Add -->
+                        <!-- End To Add -->
                         <LINK title="8-bit Color Style" media="all" href="democratia.css" type="text/css" rel="StyleSheet">
-            <META HTTP-EQUIV="Content-Type" content="text/html; charset=UTF-8">    </head>
-            <script language="JavaScript" id="MGscript" SRC="/MagicScripts33/MGBC033_00_000CS.js"></script>    <body dir=rtl     >
-               
+                        
+            <META HTTP-EQUIV="Content-Type" content="text/html; charset=UTF-8">
+            
+            </head>
+            <script language="JavaScript" id="MGscript" SRC="/MagicScripts33/MGBC033_00_000CS.js"></script>    
+            <body dir=rtl>
+                
                 
                 <table width="100%" dir="rtl" cellspacing="0"  cellpadding="0"  >
                                     <tr>
@@ -425,55 +428,45 @@
 
 
                             </TABLE>
-                        </td></tr>
-                        <!-- ***** Start To Add Audio Buttons -->
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td align="center">
-                                <div id="AudioControls" style="border:solid 1px;background-color:#adc2eb;padding:6px;;display:none" >
-                                        <button class="AudioBtn" id="playBtn" name="playBtn" title="התחלת הקראה" onclick="PlayAudio()"><img id="playBtnImg" src="images/play-button.png"></button>
-                                        <div class="AudioBtnDivider"></div>
-                                        <button class="AudioBtn" id="rewindBtn" name="rewindBtn" title="הקראת ערך קודם" onclick="rewindAudio()" disabled="true"><img src="images/rewind-button.png"></button>
-                                        <div class="AudioBtnDivider"></div>
-                                        <button class="AudioBtn" id="replayBtn" name="replayBtn" title="התחלה מחדש" onclick="PlayAudio()" disabled="true" ><img src="images/replay-button.png"></button>
-                                        <div class="AudioBtnDivider"></div>
-                                        <button class="AudioBtn" id="stopBtn" name="stopBtn" title="סיום יזום" onclick="HideAudioButtons()"><img src="images/stop-button.png"></button>
+                            <table style="width:100%;border:solid 1px black;display:none;background-color: #eee" id="tblSound">
+                            <tr ><td style="text-align:center">
+                                <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+                                <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+                                    <div class="jp-type-playlist">
+                                        <div class="jp-gui jp-interface">
+                                            <div class="jp-controls">                                                
+                                                <button class="jp-off"    name="stopBtn" role="button" tabindex="0" title="סיום יזום"  onclick="HideAudioButtons()"></button>
+                                                <button class="jp-replay" name="rewindBtn" role="button" tabindex="0" title="התחלה מחדש" onclick="replay()" disabled="true"></button>                                                
+                                                <button class="jp-rewind" name="replayBtn" role="button" tabindex="0" title="הקראת ערך קודם" onclick="rewindAudio()" disabled="true"></button>
+                                                <button class="jp-play"   name="playBtn" role="button" tabindex="0" title="התחלת הקראה" ></button>
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="jp-playlist"  style="display:none;">
+                                            <ul>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </div>
                                         
-                                </div>
-                        </td>
-                    </tr>
-                    <!-- ***** End To Add Audio Buttons -->
+                                    </div>
+                                </div>  
+                            </td>
+
+                            </tr>
+                            </table>
+                        </td></tr>
+                    
                     </table>  
-                        <!-- ***** Start To Add  -->	
-		<!-- <audio id="player"></audio> -->
-        <input type="hidden" id="PlayBackDone" name="PlayBackDone" value="false">
-        <input type="hidden" id="PlayBackManger" name="PlayBackManger" value="false">
-        <input type="hidden" id="PlayBackIsMandatory" name="PlayBackIsMandatory" value="true">
-        <input type="hidden" id="PlayBackStartDateTime" name="PlayBackStartDateTime" value="true">
-        <input type="hidden" id="PlayBackEndDateTime" name="PlayBackEndDateTime" value="true">
+                        <!-- ***** Start To Add  -->
+
+        <input type="hidden" id="PlayBackDone" name="PlayBackDone" value='false'>
+        <input type="hidden" id="PlayBackIsMandatory" name="PlayBackIsMandatory" value='true'>
+        <input type="hidden" id="PlayBackStartDateTime" name="PlayBackStartDateTime" value='true'>
+        <input type="hidden" id="PlayBackEndDateTime" name="PlayBackEndDateTime" value='true'>
 
         <!-- ***** End To Add  -->	                                                                                                    
-        <BGSOUND id="BGSOUND_ID" LOOP=1 SRC="" >
-            
-            <script type="text/javascript" language="JavaScript">
-          
-            function playSound(audioURL) {
-             if (document.all) document.all['BGSOUND_ID'].src=audioURL;
-             else self.iplayer.location.replace('jsplayer.htm?'+audioURL);
-            }
-            
-            function stopSound() {
-             if (document.all) document.all['BGSOUND_ID'].src='jsilence.mid';
-             else self.iplayer.location.replace('jsplayer.htm?stop');
-            }
-            
-            </script>
-            
-            <form name=myform>
-            <input type=button value="Play Sound" onClick="playSound('Sounds/StartOfProtocolNotify.mp3')">
-            <input type=button value="Stop Sound" onClick="stopSound()">
-            </form>      
+        
                  </body>                   
     <script>
         
@@ -501,7 +494,7 @@
             };            
         
         };
-    
+
     </script>
 </html>
 
