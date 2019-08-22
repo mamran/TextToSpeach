@@ -97,7 +97,7 @@ function HideAudioButtons()
 {
     var AudioControlDiv = document.getElementById("tblSound");
     AudioControlDiv.style.display = 'none';
-    ToggleVotesTable();
+    ToggleVotesTable(false);
     //enable all form buttons
     ToggleButtonDisabled("PlayBack",true,false);
     ToggleButtonDisabled("btnShgiot",true,false);
@@ -317,7 +317,7 @@ function CreateAudioFiles(WrapperObjID_Name,tagsNames) {
         }); 
     }
    //השבתת טבלת קולות לרשימות
-   ToggleVotesTable();
+   ToggleVotesTable(true);
 
    console.log("VotesPlaylist length "+ VotesPlaylist.playlist.length);
    //VotesPlaylist.next();  //פעולה שניתן לבצע על רשימה
@@ -330,14 +330,9 @@ function CreateAudioFiles(WrapperObjID_Name,tagsNames) {
 
 
 
-function ToggleVotesTable()
+function ToggleVotesTable(isReadOnly)
 {
-   var tbl = document.getElementById('BaaleTafkidimBAkalpitTbl');
-   var all=tbl.getElementsByTagName('input');
-   var inp, i=0;
-   while(inp=all[i++]) {
-   inp.disabled=!inp.disabled;
-   }
-
+    $('#BaaleTafkidimBAkalpitTbl :input').prop("readonly",isReadOnly)
+  
 
 }
